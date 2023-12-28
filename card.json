@@ -134,6 +134,14 @@
       "description": "Plz be one",
       "multiplier": 9,
       "id": 16
+    },
+    {
+      "name": "New Year Blast",
+      "type": "fa-fire",
+      "color": "bg-red-500",
+      "description": "Enter 2024 with a Bang",
+      "multiplier": 7,
+      "id": 17
     }
   ],
   "colorsArray": [

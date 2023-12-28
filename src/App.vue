@@ -1,6 +1,6 @@
 <template>
   <div class="text-white">
-    <router-view class=""> </router-view>
+    <router-view> </router-view>
     <component :is="currentView" />
   </div>
 </template>
