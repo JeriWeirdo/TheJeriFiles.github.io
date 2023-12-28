@@ -1,0 +1,224 @@
+{
+  "Cards": [
+    {
+      "id": 1,
+      "name": "Normal Day In Montana",
+      "type": "fa-snowflake",
+      "multiplier": 9,
+      "color": "bg-gray-50",
+      "description": "Snowed in",
+      "isOp": 0
+    },
+    {
+      "id": 2,
+      "name": "Cuiaba",
+      "type": "fa-fire",
+      "multiplier": 14,
+      "color": "bg-red-500",
+      "description": "This town is full of 'human' heat",
+      "isOp": 1
+    },
+    {
+      "id": 3,
+      "name": "Minor leak",
+      "type": "fa-droplet",
+      "multiplier": 2,
+      "color": "bg-cyan-500",
+      "description": "Call your plummer",
+      "isOp": 0
+    },
+    {
+      "id": 4,
+      "name": "Most Wonderfull time of the Year",
+      "type": "fa-snowflake",
+      "multiplier": 6,
+      "color": "bg-yellow-500",
+      "description": "It's christmas gang",
+      "isOp": 0
+    },
+    {
+      "name": "water Ballon",
+      "type": "fa-droplet",
+      "color": "bg-sky-500",
+      "description": "Splash",
+      "multiplier": 5,
+      "id": 5,
+      "isOp": 0
+    },
+    {
+      "name": "Kitchen Stove",
+      "type": "fa-fire",
+      "color": "bg-red-500",
+      "description": "Gets the job done",
+      "multiplier": 4,
+      "id": 6,
+      "isOp": 0
+    },
+    {
+      "name": "nuke",
+      "type": "fa-fire",
+      "color": "bg-red-500",
+      "description": "bye bye japan",
+      "multiplier": 15,
+      "id": 7,
+      "isOp": 1
+    },
+    {
+      "name": "refreshment",
+      "type": "fa-droplet",
+      "color": "bg-rose-500",
+      "description": "The refreshment came with her shop",
+      "multiplier": 9,
+      "id": 8
+    },
+    {
+      "name": "Its ALIVE!",
+      "type": "fa-snowflake",
+      "color": "bg-rose-500",
+      "description": "I have finally gotten colors to work",
+      "multiplier": 10,
+      "id": 9
+    },
+    {
+      "name": "Solver of all problems",
+      "type": "fa-droplet",
+      "color": "bg-emerald-500",
+      "description": "Op Solutions & co",
+      "multiplier": 5,
+      "id": 10
+    },
+    {
+      "name": "don't play with fire",
+      "type": "fa-fire",
+      "color": "bg-gray-500",
+      "description": "ye play with fire and sometimes ye get burnt",
+      "multiplier": 11,
+      "id": 11
+    },
+    {
+      "name": "Overflow?",
+      "type": "fa-droplet",
+      "color": "bg-blue-500",
+      "description": "The dam broke",
+      "multiplier": 6,
+      "id": 12
+    },
+    {
+      "name": "Autumn falls",
+      "type": "fa-snowflake",
+      "color": "bg-amber-500",
+      "description": "Winter is coming",
+      "multiplier": 7,
+      "id": 13
+    },
+    {
+      "name": "Will this be op?",
+      "type": "fa-droplet",
+      "color": "bg-teal-500",
+      "description": "there is a 1 in 100 chance of a created card be op",
+      "multiplier": 3,
+      "id": 14
+    },
+    {
+      "name": "Will everything break?",
+      "type": "fa-droplet",
+      "color": "bg-indigo-500",
+      "description": "done some sneaky things",
+      "multiplier": 8,
+      "id": 15
+    },
+    {
+      "name": "need more op cards",
+      "type": "fa-snowflake",
+      "color": "bg-violet-500",
+      "description": "Plz be one",
+      "multiplier": 9,
+      "id": 16
+    },
+    {
+      "name": "New Year Blast",
+      "type": "fa-fire",
+      "color": "bg-red-500",
+      "description": "Enter 2024 with a Bang",
+      "multiplier": 7,
+      "id": 17
+    }
+  ],
+  "colorsArray": [
+    {
+      "id": 1,
+      "name": "bg-gray-500",
+      "color": "Grey"
+    },
+    {
+      "id": 2,
+      "name": "bg-red-500",
+      "color": "Red"
+    },
+    {
+      "id": 3,
+      "name": "bg-orange-500",
+      "color": "Orange"
+    },
+    {
+      "id": 4,
+      "name": "bg-amber-500",
+      "color": "Amber"
+    },
+    {
+      "id": 5,
+      "name": "bg-yellow-500",
+      "color": "Yellow"
+    },
+    {
+      "id": 6,
+      "name": "bg-lime-500",
+      "color": "Lime"
+    },
+    {
+      "id": 7,
+      "name": "bg-green-500",
+      "color": "Green"
+    },
+    {
+      "id": 8,
+      "name": "bg-emerald-500",
+      "color": "Emerald"
+    },
+    {
+      "id": 9,
+      "name": "bg-teal-500",
+      "color": "Teal"
+    },
+    {
+      "id": 10,
+      "name": "bg-cyan-500",
+      "color": "Cyan"
+    },
+    {
+      "id": 11,
+      "name": "bg-sky-500",
+      "color": "Sky"
+    },
+    {
+      "id": 12,
+      "name": "bg-blue-500",
+      "color": "Blue"
+    },
+    {
+      "id": 13,
+      "name": "bg-indigo-500",
+      "color": "Indigo"
+    },
+    {
+      "id": 14,
+      "name": "bg-violet-500",
+      "color": "Violet"
+    },
+    {
+      "id": 15,
+      "name": "bg-rose-500",
+      "color": "Rose"
+    }
+  ]
+}
