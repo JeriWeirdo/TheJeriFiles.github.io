@@ -125,7 +125,7 @@ export default {
         createCard() {
             const type = document.querySelector('input[name="element"]:checked').id;
             const color = document.querySelector('input[name="color"]:checked').id;
-            const multiplier = Math.floor(Math.random() * 10) + 1;
+            let multiplier = Math.floor(Math.random() * 10) + 1;
             const op = Math.floor(Math.random() * 100) + 1;
             if (op == 100) {multiplier = multiplier + 10}
             makeCard(this.cardName, type, color, this.cardDescription, multiplier)
