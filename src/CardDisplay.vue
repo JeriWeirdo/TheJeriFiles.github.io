@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import CardForge from './CardForge.vue';
-import CardMaker from './CardMaker.vue';
+import CardForge from './components/CardForge.vue';
+import CardMaker from './components/CardMaker.vue';
 
 export default {
   data() {

@@ -5,7 +5,7 @@
 
 </template>
 <script>
-import CardForge from './CardForge.vue';
+import CardForge from './components/CardForge.vue';
 export default {
     data() {
         return {

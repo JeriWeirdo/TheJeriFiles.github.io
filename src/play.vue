@@ -3,11 +3,11 @@
     
     <!-- <CardForge v-if="Cards.type == 'monke'" v-for="card in Cards" :name="card.name" :multiplier="card.multiplier" :cor="card.color" :type="card.type" :description="card.description" class="text-slate-900"/> -->
  </div>
- <playerCards :Cards="this.responseCards"/>
+ <PlayerCards :Cards="this.responseCards"/>
 </template>
 
 <script>
-import CardForge from './CardForge.vue';
+import CardForge from './components/CardForge.vue';
 import playerCards from './playerCards.vue';
 
 export default {
