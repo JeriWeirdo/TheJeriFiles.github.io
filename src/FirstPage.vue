@@ -4,4 +4,5 @@
         <a class="bg-slate-700 flex p-1 rounded items-center m-2" href="/#/play">Play A Game</a>
         <a class="bg-slate-700 flex p-1 rounded items-center m-2" href="/#/display">CardDisplay</a>
     </div>
+    
 </template>
