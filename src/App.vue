@@ -1,11 +1,11 @@
 <template>
   <div class="text-white">
-    <MainPage />
+    <FirstPage />
     <router-view> </router-view>
     <component :is="currentView" />
   </div>
 </template>
 
 <script>
-  import MainPage from './MainPage.vue'
+  import FirstPage from './FirstPage.vue'
 </script>
