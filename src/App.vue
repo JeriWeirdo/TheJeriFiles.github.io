@@ -7,5 +7,5 @@
 </template>
 
 <script>
-import Home from './Home.vue';
+import Home from './../src/Home.vue';
 </script>
