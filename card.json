@@ -115,7 +115,7 @@
       "name": "Will this be op?",
       "type": "fa-droplet",
       "color": "bg-teal-500",
-      "description": "there is a 1 in 100 chance of a created card be op",
+      "description": "there is a 1 in 20 chance of a created card be op",
       "multiplier": 3,
       "id": 14
     },
@@ -142,6 +142,590 @@
       "description": "Enter 2024 with a Bang",
       "multiplier": 7,
       "id": 17
+    },
+    {
+      "name": "what",
+      "type": "fa-snowflake",
+      "color": "bg-gray-500",
+      "description": "e",
+      "multiplier": 8,
+      "id": 18
+    },
+    {
+      "name": "DAMN IT JERI",
+      "type": "fa-fire",
+      "color": "bg-yellow-500",
+      "description": "aaaaaaaaaaaaaaaa",
+      "multiplier": 2,
+      "id": 19
+    },
+    {
+      "name": "strong card?",
+      "type": "fa-fire",
+      "color": "bg-emerald-500",
+      "description": "plz be stronggggg",
+      "multiplier": 3,
+      "id": 20
+    },
+    {
+      "name": "carta de fogo",
+      "type": "fa-fire",
+      "color": "bg-gray-500",
+      "description": "Isso é uma carta de fogo",
+      "multiplier": 1,
+      "id": 21
+    },
+    {
+      "name": "Power of Fall",
+      "type": "fa-snowflake",
+      "color": "bg-orange-500",
+      "description": "The mega power of autumn cards",
+      "multiplier": 16,
+      "id": 22
+    },
+    {
+      "name": "Cold Heart",
+      "type": "fa-snowflake",
+      "color": "bg-indigo-500",
+      "description": "As cold as Ice",
+      "multiplier": 7,
+      "id": 23
+    },
+    {
+      "name": "We need more Water",
+      "type": "fa-droplet",
+      "color": "bg-cyan-500",
+      "description": "So little water cards, you'd think we'd dried up!",
+      "multiplier": 1,
+      "id": 24
+    },
+    {
+      "name": "Burning Heart",
+      "type": "fa-fire",
+      "color": "bg-rose-500",
+      "description": "Nothing burns more than a flaming heart!!!",
+      "multiplier": 3,
+      "id": 25
+    },
+    {
+      "name": "Color Matters",
+      "type": "fa-droplet",
+      "color": "bg-violet-500",
+      "description": "Even in power cards, you my even win a game because of them",
+      "multiplier": 4,
+      "id": 26
+    },
+    {
+      "name": "muddied out snow",
+      "type": "fa-snowflake",
+      "color": "bg-lime-500",
+      "description": "Ew",
+      "multiplier": 1,
+      "id": 27
+    },
+    {
+      "name": "blazing inferno",
+      "type": "fa-fire",
+      "color": "bg-red-500",
+      "description": "Spreading warmth, literally",
+      "multiplier": 5,
+      "id": 28
+    },
+    {
+      "name": "sizzling droplet",
+      "type": "fa-droplet",
+      "color": "bg-amber-500",
+      "description": "The water's on fire!",
+      "multiplier": 8,
+      "id": 29
+    },
+    {
+      "name": "icy laughter",
+      "type": "fa-snowflake",
+      "color": "bg-cyan-500",
+      "description": "Snow joke, it's chilly!",
+      "multiplier": 12,
+      "id": 30
+    },
+    {
+      "name": "blazing trails",
+      "type": "fa-fire",
+      "color": "bg-orange-500",
+      "description": "Leaving sparks behind",
+      "multiplier": 3,
+      "id": 31
+    },
+    {
+      "name": "soggy spectacle",
+      "type": "fa-droplet",
+      "color": "bg-green-500",
+      "description": "Rain's grand performance",
+      "multiplier": 10,
+      "id": 32
+    },
+    {
+      "name": "frosty mischief",
+      "type": "fa-snowflake",
+      "color": "bg-violet-500",
+      "description": "Snow much trouble!",
+      "multiplier": 7,
+      "id": 33
+    },
+    {
+      "name": "burning desire",
+      "type": "fa-fire",
+      "color": "bg-rose-500",
+      "description": "Passionately hot",
+      "multiplier": 15,
+      "id": 34
+    },
+    {
+      "name": "dripping delight",
+      "type": "fa-droplet",
+      "color": "bg-yellow-500",
+      "description": "Water you looking at?",
+      "multiplier": 6,
+      "id": 35
+    },
+    {
+      "name": "polar punchline",
+      "type": "fa-snowflake",
+      "color": "bg-sky-500",
+      "description": "Snow laughing matter",
+      "multiplier": 11,
+      "id": 36
+    },
+    {
+      "name": "sizzling sensation",
+      "type": "fa-fire",
+      "color": "bg-blue-500",
+      "description": "Hotter than the blues",
+      "multiplier": 9,
+      "id": 37
+    },
+    {
+      "name": "deluge of giggles",
+      "type": "fa-droplet",
+      "color": "bg-teal-500",
+      "description": "Raindrops tickling funny bones",
+      "multiplier": 2,
+      "id": 38
+    },
+    {
+      "name": "frosty fandango",
+      "type": "fa-snowflake",
+      "color": "bg-gray-500",
+      "description": "Snowflake dance party",
+      "multiplier": 13,
+      "id": 39
+    },
+    {
+      "name": "blazing brilliance",
+      "type": "fa-fire",
+      "color": "bg-indigo-500",
+      "description": "Setting minds on fire",
+      "multiplier": 4,
+      "id": 40
+    },
+    {
+      "name": "aquatic uproar",
+      "type": "fa-droplet",
+      "color": "bg-yellow-500",
+      "description": "Droplets making a splash",
+      "multiplier": 14,
+      "id": 41
+    },
+    {
+      "name": "snowy spectacle",
+      "type": "fa-snowflake",
+      "color": "bg-lime-500",
+      "description": "Winter's grand show",
+      "multiplier": 1,
+      "id": 42
+    },
+    {
+      "name": "blazing trailblazer",
+      "type": "fa-fire",
+      "color": "bg-orange-500",
+      "description": "Leaving trails of fire",
+      "multiplier": 5,
+      "id": 43
+    },
+    {
+      "name": "sizzling symphony",
+      "type": "fa-droplet",
+      "color": "bg-green-500",
+      "description": "Water's musical notes",
+      "multiplier": 8,
+      "id": 44
+    },
+    {
+      "name": "icy enchantment",
+      "type": "fa-snowflake",
+      "color": "bg-violet-500",
+      "description": "Enchanted snowflakes",
+      "multiplier": 12,
+      "id": 45
+    },
+    {
+      "name": "blazing beacon",
+      "type": "fa-fire",
+      "color": "bg-rose-500",
+      "description": "Guiding with fiery light",
+      "multiplier": 3,
+      "id": 46
+    },
+    {
+      "name": "soggy serenade",
+      "type": "fa-droplet",
+      "color": "bg-blue-500",
+      "description": "Rain's melodic tunes",
+      "multiplier": 10,
+      "id": 47
+    },
+    {
+      "name": "frosty finale",
+      "type": "fa-snowflake",
+      "color": "bg-sky-500",
+      "description": "Snow's grand conclusion",
+      "multiplier": 7,
+      "id": 48
+    },
+    {
+      "name": "burning banter",
+      "type": "fa-fire",
+      "color": "bg-red-500",
+      "description": "Fire's playful conversation",
+      "multiplier": 6,
+      "id": 49
+    },
+    {
+      "name": "dripping daydream",
+      "type": "fa-droplet",
+      "color": "bg-amber-500",
+      "description": "Water's whimsical visions",
+      "multiplier": 6,
+      "id": 50
+    },
+    {
+      "name": "polar pranks",
+      "type": "fa-snowflake",
+      "color": "bg-cyan-500",
+      "description": "Snow's mischievous deeds",
+      "multiplier": 11,
+      "id": 51
+    },
+    {
+      "name": "sizzling spectacle",
+      "type": "fa-fire",
+      "color": "bg-yellow-500",
+      "description": "A show of intense heat",
+      "multiplier": 9,
+      "id": 52
+    },
+    {
+      "name": "deluge of delight",
+      "type": "fa-droplet",
+      "color": "bg-teal-500",
+      "description": "Rain's joyful downpour",
+      "multiplier": 2,
+      "id": 53
+    },
+    {
+      "name": "frosty fusion",
+      "type": "fa-snowflake",
+      "color": "bg-gray-500",
+      "description": "Snowflake elements combined",
+      "multiplier": 13,
+      "id": 54
+    },
+    {
+      "name": "blazing brilliance",
+      "type": "fa-fire",
+      "color": "bg-indigo-500",
+      "description": "Igniting minds with brilliance",
+      "multiplier": 4,
+      "id": 55
+    },
+    {
+      "name": "aquatic laughter",
+      "type": "fa-droplet",
+      "color": "bg-sky-500",
+      "description": "Water finding humor",
+      "multiplier": 14,
+      "id": 56
+    },
+    {
+      "name": "snowy surprise",
+      "type": "fa-snowflake",
+      "color": "bg-lime-500",
+      "description": "Winter's unexpected twist",
+      "multiplier": 1,
+      "id": 57
+    },
+    {
+      "name": "You Can't Handle the Blaze",
+      "type": "fa-fire",
+      "color": "bg-red-500",
+      "description": "A Few Good Flames",
+      "multiplier": 7,
+      "id": 58
+    },
+    {
+      "name": "To Droplet or Not to Droplet",
+      "type": "fa-droplet",
+      "color": "bg-amber-500",
+      "description": "Shakespearean water dilemma",
+      "multiplier": 12,
+      "id": 59
+    },
+    {
+      "name": "Snow Business Like Show Business",
+      "type": "fa-snowflake",
+      "color": "bg-cyan-500",
+      "description": "Winter's Broadway debut",
+      "multiplier": 5,
+      "id": 60
+    },
+    {
+      "name": "Blaze Gump",
+      "type": "fa-fire",
+      "color": "bg-violet-500",
+      "description": "Life is like a box of embers",
+      "multiplier": 10,
+      "id": 61
+    },
+    {
+      "name": "Here's Johnny Drip!",
+      "type": "fa-droplet",
+      "color": "bg-indigo-500",
+      "description": "The Shining waters",
+      "multiplier": 15,
+      "id": 62
+    },
+    {
+      "name": "Snow Country for Old Men",
+      "type": "fa-snowflake",
+      "color": "bg-gray-500",
+      "description": "Coen Brothers' frosty tale",
+      "multiplier": 1,
+      "id": 63
+    },
+    {
+      "name": "Blazing Saddles, Drizzling Skies",
+      "type": "fa-fire",
+      "color": "bg-orange-500",
+      "description": "Wild West meets precipitation",
+      "multiplier": 6,
+      "id": 64
+    },
+    {
+      "name": "Droplet Club",
+      "type": "fa-droplet",
+      "color": "bg-blue-500",
+      "description": "First rule: Talk about water",
+      "multiplier": 11,
+      "id": 65
+    },
+    {
+      "name": "Snow White and the Seven Flurries",
+      "type": "fa-snowflake",
+      "color": "bg-indigo-500",
+      "description": "Disney's wintry adaptation",
+      "multiplier": 3,
+      "id": 66
+    },
+    {
+      "name": "The Firefather",
+      "type": "fa-fire",
+      "color": "bg-teal-500",
+      "description": "An offer you can't extinguish",
+      "multiplier": 8,
+      "id": 67
+    },
+    {
+      "name": "When Harry Met Droplet",
+      "type": "fa-droplet",
+      "color": "bg-sky-500",
+      "description": "Romantic drizzles in New York",
+      "multiplier": 13,
+      "id": 68
+    },
+    {
+      "name": "Snowpocalypse Now",
+      "type": "fa-snowflake",
+      "color": "bg-yellow-500",
+      "description": "Apocalypse meets snowfall",
+      "multiplier": 4,
+      "id": 69
+    },
+    {
+      "name": "Blazing Jurassic Drizzle",
+      "type": "fa-fire",
+      "color": "bg-green-500",
+      "description": "Dinosaurs with a chance of rain",
+      "multiplier": 9,
+      "id": 70
+    },
+    {
+      "name": "Droplet Fiction",
+      "type": "fa-droplet",
+      "color": "bg-rose-500",
+      "description": "Tarantino's water-themed epic",
+      "multiplier": 2,
+      "id": 71
+    },
+    {
+      "name": "The Snowfather",
+      "type": "fa-snowflake",
+      "color": "bg-lime-500",
+      "description": "Winter's cold, calculated leader",
+      "multiplier": 14,
+      "id": 72
+    },
+    {
+      "name": "The Good, the Bad, and the Blaze",
+      "type": "fa-fire",
+      "color": "bg-orange-500",
+      "description": "Spaghetti western in flames",
+      "multiplier": 6,
+      "id": 73
+    },
+    {
+      "name": "The Big Lebrowski",
+      "type": "fa-droplet",
+      "color": "bg-blue-500",
+      "description": "Droplets abide",
+      "multiplier": 18,
+      "id": 74
+    },
+    {
+      "name": "Snowy McSnowface",
+      "type": "fa-snowflake",
+      "color": "bg-indigo-500",
+      "description": "An icy name choice",
+      "multiplier": 3,
+      "id": 75
+    },
+    {
+      "name": "The Fire Awakens",
+      "type": "fa-fire",
+      "color": "bg-teal-500",
+      "description": "Star Wars in flames",
+      "multiplier": 8,
+      "id": 76
+    },
+    {
+      "name": "Singin' in the Drizzle",
+      "type": "fa-droplet",
+      "color": "bg-rose-500",
+      "description": "Musical water magic",
+      "multiplier": 2,
+      "id": 77
+    },
+    {
+      "name": "Snow Hard",
+      "type": "fa-snowflake",
+      "color": "bg-sky-500",
+      "description": "Bruce Willis, winter edition",
+      "multiplier": 7,
+      "id": 78
+    },
+    {
+      "name": "The Blaze Ultimatum",
+      "type": "fa-fire",
+      "color": "bg-red-500",
+      "description": "Jason Bourne in flames",
+      "multiplier": 15,
+      "id": 79
+    },
+    {
+      "name": "Droplet Rider",
+      "type": "fa-droplet",
+      "color": "bg-amber-500",
+      "description": "Easy rider, wet journey",
+      "multiplier": 6,
+      "id": 80
+    },
+    {
+      "name": "Snow Much Love",
+      "type": "fa-snowflake",
+      "color": "bg-cyan-500",
+      "description": "Romantic winter comedy",
+      "multiplier": 11,
+      "id": 81
+    },
+    {
+      "name": "Eternal Flame of the Spotless Mind",
+      "type": "fa-fire",
+      "color": "bg-yellow-500",
+      "description": "Love story in embers",
+      "multiplier": 9,
+      "id": 82
+    },
+    {
+      "name": "Droplet and Prejudice",
+      "type": "fa-droplet",
+      "color": "bg-teal-500",
+      "description": "Jane Austen's rainy romance",
+      "multiplier": 2,
+      "id": 83
+    },
+    {
+      "name": "Snow Fiction",
+      "type": "fa-snowflake",
+      "color": "bg-gray-500",
+      "description": "Tarantino's wintry masterpiece",
+      "multiplier": 17,
+      "id": 84
+    },
+    {
+      "name": "Blaze Almighty",
+      "type": "fa-fire",
+      "color": "bg-indigo-500",
+      "description": "Comedy with divine flames",
+      "multiplier": 4,
+      "id": 85
+    },
+    {
+      "name": "Singing in the Rain of Fire",
+      "type": "fa-droplet",
+      "color": "bg-yellow-500",
+      "description": "Musical meets fiery weather",
+      "multiplier": 14,
+      "id": 86
+    },
+    {
+      "name": "Snow Hard: With a Vengeance",
+      "type": "fa-snowflake",
+      "color": "bg-lime-500",
+      "description": "Bruce Willis battles winter again",
+      "multiplier": 1,
+      "id": 87
+    },
+    {
+      "name": "Blazing Saddles, Dripping Skies",
+      "type": "fa-fire",
+      "color": "bg-orange-500",
+      "description": "Wild West meets precipitation",
+      "multiplier": 6,
+      "id": 88
+    },
+    {
+      "name": "Droplet Club",
+      "type": "fa-droplet",
+      "color": "bg-blue-500",
+      "description": "First rule: Talk about water",
+      "multiplier": 11,
+      "id": 89
+    },
+    {
+      "name": "Snow White and the Seven Flurries",
+      "type": "fa-snowflake",
+      "color": "bg-indigo-500",
+      "description": "Disney's wintry adaptation",
+      "multiplier": 3,
+      "id": 90
     }
   ],
   "colorsArray": [

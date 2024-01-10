@@ -127,7 +127,7 @@ export default {
             const color = document.querySelector('input[name="color"]:checked').id;
             let multiplier = Math.floor(Math.random() * 10) + 1;
             const op = Math.floor(Math.random() * 100) + 1;
-            if (op == 100) {multiplier = multiplier + 10}
+            if (op >= 95) {multiplier = multiplier + 10}
             makeCard(this.cardName, type, color, this.cardDescription, multiplier)
             .then((response) => {
                     console.log(op)

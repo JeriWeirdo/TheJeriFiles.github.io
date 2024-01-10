@@ -1,12 +1,13 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-import FirstPage from '../FirstPage.vue'
-import CardDisplay from '../CardDisplay.vue'
-import Play from 'src/Play.vue'
+import HomeView from '../views/HomeView.vue'
+import App from '../App.vue'
+import CardDisplay from '../views/CardDisplay.vue'
+import Play from '../views/Play.vue'
 
 const routesArray: RouteRecordRaw[] = [
     {   path: '/',
-        name: 'firstpage',
-        component: Home },
+        name: 'HomeView',
+        component: HomeView },
     {   path: '/display',
         name: 'carddisplay',
         component: CardDisplay },
