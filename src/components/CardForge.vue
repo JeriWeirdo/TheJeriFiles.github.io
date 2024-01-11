@@ -2,16 +2,16 @@
   <div class="w-40 h-64 m-1 p-1  rounded" :class="[opGlint()]">
     <div v-if="multiplier >= 15" class="flex flex-col w-full h-full p-2 rounded justify-between border border-amber-500" :class="[superCardColor()]" >
       <div class="flex justify-between items-center"><i class="fa-solid " :class="type"></i>
-        <p class="flex place-self-end justify-self-start border border-amber-500 bg-slate-50 rounded p-0.5">{{ multiplier }}</p>
+        <p class="flex place-self-end justify-self-start border border-amber-50 rounded p-0.5" :class="[opGlint2()]">{{ multiplier }}</p>
       </div>
-      <div class="flex flex-col"><p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate align-self-end mb-0.5 capitalize">{{ name }}</p>
+      <div class="flex flex-col"><p class="border border-amber-500 rounded p-0.5 text-slate align-self-end mb-0.5 capitalize" :class="[opGlint2()]">{{ name }}</p>
       <p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate text-xs">{{ description }}</p></div>
     </div>
     <div v-else class="flex flex-col w-full h-full p-2 rounded justify-between border border-amber-500 " :class="cor" >
       <div class="flex justify-between items-center"><i class="fa-solid " :class="type"></i>
-        <p class="flex place-self-end justify-self-start border border-amber-500 bg-slate-50 rounded p-0.5">{{ multiplier }}</p>
+        <p class="flex place-self-end justify-self-start border border-amber-500  rounded p-0.5" :class="[opGlint2()]">{{ multiplier }}</p>
       </div>
-      <div class="flex flex-col"><p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate align-self-end mb-0.5 capitalize">{{ name }}</p>
+      <div class="flex flex-col"><p class="border border-amber-500 rounded p-0.5 text-slate align-self-end mb-0.5 capitalize" :class="[opGlint2()]">{{ name }}</p>
       <p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate text-xs">{{ description }}</p></div>
     </div>
   </div>
@@ -27,8 +27,15 @@
 
   const opGlint = () => {
     if (props.multiplier >= 11) {
-      return "shadow shadow-2xl shadow-black "
-    } else { return " bg-white ";}
+      return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-cyan-300 to-amber-700"
+    } else { return " bg-slate-50 ";}
+  }
+  const opGlint2 = () => {
+         if (props.multiplier >= 11 && props.type == "fa-fire") { return "bg-gradient-to-t from-red-600 to-red-800 shadow shadow-2xl shadow-amber-400 text-slate-200"}
+    else if (props.multiplier >= 11 && props.type == "fa-droplet") { return "bg-gradient-to-t from-blue-400 to-blue-800 shadow shadow-2xl shadow-amber-400 text-slate-200"}
+    else if (props.multiplier >= 11 && props.type == "fa-snowflake") { return "bg-gradient-to-t from-slate-300 to-sky-600 shadow shadow-2xl shadow-amber-400 text-slate-100"}
+      else {return " bg-slate-50"}
+    
   }
   const superCardColor = () => {
     if (props.type == 'fa-fire') { return "bg-gradient-to-t from-red-400 to-red-800" }
