@@ -1,5 +1,10 @@
 <template>
   <div class="text-xl text-black flex flex-col w-full h-full" :class="[whatCardDeck()]">
+    <div class="absolute place-self-center top-1/3 z-50" v-if="announce">
+      <span class="text-3xl text-white bg-gradient-to-t rounded p-1 uppercase from-amber-950 via-yellow-600 to-amber-500" v-if="roundWinner == 'user'">you won this round </span>
+      <span class="text-3xl text-white bg-gradient-to-t rounded p-1 uppercase from-green-950 via-red-600 to-red-500" v-if="roundWinner == 'computer'">well, ya lost this round</span>
+      <span class="text-3xl text-white bg-gradient-to-t rounded p-1 uppercase from-slate-950 via-gray-600 to-gray-500" v-if="roundWinner == 'tie'">its a tie</span>
+    </div>
     <div class="w-2/3 flex self-center justify-center ">
       <div class="flex flex-col items-center">
         <div class="flex w-300 h-100 fixed -top-20 ">
@@ -58,12 +63,13 @@ import backwordsCardForge from '../components/backwordsCardForge.vue';
 const Cards = ref([]);
 const colorsArray = ref([]);
 const selectedCards = ref([]);
-const OnTable = ref([])
-const computerDeck = ref([])
-const computerOnTable = ref([])
-const userWinningCards = ref([])
-const computerWinningCards = ref([])
-const roundWinner = ref('')
+const OnTable = ref([]);
+const computerDeck = ref([]);
+const computerOnTable = ref([]);
+const userWinningCards = ref([]);
+const computerWinningCards = ref([]);
+const roundWinner = ref('');
+const announce = ref(false);
 const points = ref([
   {
     user: 'user',
@@ -73,7 +79,7 @@ const points = ref([
     user: 'computer',
     pontos: 0
   }
-])
+]);
 const selectUserRandomCards = () => {
   const numberOfCardsToSelect = 5;
   const shuffledCards = shuffleArray(Cards.value);
@@ -82,7 +88,7 @@ const selectUserRandomCards = () => {
 
 const getRandomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+};
 
 const generateComputerDeck = () => {
   const numCardsForComputer = 5;
@@ -95,7 +101,7 @@ const generateComputerDeck = () => {
   }
 
   computerDeck.value = computerCards;
-}
+};
 
 const shuffleArray = (array) => {
   let currentIndex = array.length;
@@ -118,7 +124,6 @@ const moveToTable = (card) => {
   if (index !== -1) {
     selectedCards.value.splice(index, 1);
     OnTable.value.push(card);
-
     selectComputerRandomCard();
     setTimeout(() => {
       compareCards()
@@ -178,27 +183,33 @@ const handleWinner = (userCard, computerCard) => {
     points.value[0].pontos++; // Increase user's points
     OnTable.value.pop();
     computerOnTable.value.pop();
-    alert('you win this round');
+    setTimeout(() => {noAnnounce()}, 1000)
   }
-   else if (roundWinner.value == 'computer') {
+  else if (roundWinner.value == 'computer') {
     computerWinningCards.value.push(computerCard);
     points.value[1].pontos++; // Increase computer's points
     OnTable.value.pop();
     computerOnTable.value.pop();
-    alert('you loose this round');
-  } 
-    else if (roundWinner.value == 'tie') {
+    console.log('before')
+    setTimeout(() => {noAnnounce(), console.log('in')}, 1000);
+    console.log('after')
+  }
+  else {
     OnTable.value.pop();
     computerOnTable.value.pop();
-    alert('you tied this round');
+    setTimeout(() => {noAnnounce()}, 1000)
   }
-  
-dealCards()
+  noAnnounce()
+  dealCards()
 };
 
+const noAnnounce = () => {
+  announce.value = !announce.value
+}
+
 const endGame = (stats) => {
-  if (stats == "win") { alert("You win the game!"); setTimeout(location.reload(), 2000);}
-  if (stats == "lose") { alert("L you lose"); setTimeout(location.reload(), 2000); }
+  if (stats == "win") { alert("You win the game!"); setTimeout(() => location.reload(), 2000); }
+  if (stats == "lose") { alert("L you lose"); setTimeout(() => location.reload(), 2000); }
 }
 
 const dealCards = () => {
@@ -227,11 +238,10 @@ const whatCardDeck = () => {
 
 watch(points, (newValues, oldValues) => {
   const [user, computer] = newValues;
-  if (user.pontos >= (computer.pontos + 3))
-  { console.log('win!!!!!!!'); endGame("win")}
-  else if (computer.pontos >= (user.pontos + 3)) 
-  {console.log("LOSERRRRRRRRRRRRRRRRRRRRRRRRR"); endGame("lose")}
-  
+  console.log('EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
+  if (user.pontos >= (computer.pontos + 3)) { console.log('win!!!!!!!'); endGame("win") }
+  else if (computer.pontos >= (user.pontos + 3)) { console.log("LOSERRRRRRRRRRRRRRRRRRRRRRRRR"); endGame("lose") }
+
 })
 
 onMounted(async () => {

@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Normal Day In Montana",
       "type": "fa-snowflake",
-      "multiplier": 9,
+      "multiplier": 15,
       "color": "bg-gray-50",
       "description": "Snowed in",
       "isOp": 0
@@ -13,7 +13,7 @@
       "id": 2,
       "name": "Cuiaba",
       "type": "fa-fire",
-      "multiplier": 14,
+      "multiplier": 15,
       "color": "bg-red-500",
       "description": "This town is full of 'human' heat",
       "isOp": 1
@@ -22,7 +22,7 @@
       "id": 3,
       "name": "Minor leak",
       "type": "fa-droplet",
-      "multiplier": 2,
+      "multiplier": 15,
       "color": "bg-cyan-500",
       "description": "Call your plummer",
       "isOp": 0
@@ -244,7 +244,7 @@
       "type": "fa-snowflake",
       "color": "bg-cyan-500",
       "description": "Snow joke, it's chilly!",
-      "multiplier": 12,
+      "multiplier": 7,
       "id": 30
     },
     {
@@ -316,7 +316,7 @@
       "type": "fa-snowflake",
       "color": "bg-gray-500",
       "description": "Snowflake dance party",
-      "multiplier": 13,
+      "multiplier": 8,
       "id": 39
     },
     {
@@ -332,7 +332,7 @@
       "type": "fa-droplet",
       "color": "bg-yellow-500",
       "description": "Droplets making a splash",
-      "multiplier": 14,
+      "multiplier": 7,
       "id": 41
     },
     {
@@ -758,6 +758,54 @@
       "description": "pega",
       "multiplier": 7,
       "id": 94
+    },
+    {
+      "name": "Damn Chicken",
+      "type": "fa-droplet",
+      "color": "bg-yellow-500",
+      "description": "You won't get tired of my puns, will you?",
+      "multiplier": 6,
+      "id": 95
+    },
+    {
+      "name": "Phantom Chica",
+      "type": "fa-droplet",
+      "color": "bg-yellow-500",
+      "description": "Watermellon",
+      "multiplier": 1,
+      "id": 96
+    },
+    {
+      "name": "iziToast is ez",
+      "type": "fa-droplet",
+      "color": "bg-indigo-500",
+      "description": "It truly is.",
+      "multiplier": 18,
+      "id": 97
+    },
+    {
+      "name": "Had some backend issues today",
+      "type": "fa-droplet",
+      "color": "bg-emerald-500",
+      "description": "happens sometimes",
+      "multiplier": 10,
+      "id": 98
+    },
+    {
+      "name": "more tests baby",
+      "type": "fa-fire",
+      "color": "bg-violet-500",
+      "description": "This is my life now",
+      "multiplier": 4,
+      "id": 99
+    },
+    {
+      "name": "Pernicious",
+      "type": "fa-fire",
+      "color": "bg-green-500",
+      "description": "Is that how you spell the map name?",
+      "multiplier": 7,
+      "id": 100
     }
   ],
   "colorsArray": [

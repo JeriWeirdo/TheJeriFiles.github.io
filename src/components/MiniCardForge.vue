@@ -1,7 +1,18 @@
 <template>
-  <div class="w-10 h-10 m-1 p-1 bg-white rounded " :class="[opGlint()]">
+  <div v-if="mini == false" class="w-10 h-10 m-1 p-1 bg-white rounded " :class="[opGlint()]">
     <div v-if="multiplier >= 15" class="flex flex-col w-full h-full p-2 rounded justify-between border border-amber-500" :class="[superCardColor()]" >
       <div class="flex justify-between items-center"><i class="fa-solid " :class="type"></i>
+      </div>
+    </div>
+    <div v-else class="flex flex-col w-full h-full p-2 rounded justify-between border border-amber-500 " :class="cor" >
+      <div class="flex justify-between items-center"><i class="fa-solid " :class="type"></i>
+      </div>
+    </div>
+  </div>
+  <div v-if="mini == true" class="w-6 h-6 m-1 p-0.5 bg-white rounded text-xs justify-center" :class="[opGlint()]">
+    <div v-if="multiplier >= 15" class="flex flex-col w-full h-full rounded justify-between border border-amber-500" :class="[superCardColor()]" >
+      <div class="flex justify-center pt-1 items-center text-xs">
+        <i class="fa-solid " :class="type"></i>
       </div>
     </div>
     <div v-else class="flex flex-col w-full h-full p-2 rounded justify-between border border-amber-500 " :class="cor" >
@@ -17,6 +28,7 @@
     cor: String,
     type: String,
     description: String,
+    mini: Boolean,
   })
 
   const opGlint = () => {

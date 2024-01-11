@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col max-h-screen max-w-screen w-full">
-    <div class="text-white w-full p-1 bg bg-slate-500 flex flex-row">
+    <div class="text-white w-full p-1 bg bg-slate-500 flex flex-row" >
       <div class=" flex flex-col"><a href="/" class="bg-slate-700 p-1 m-1 h-fit w-fit rounded">Go Back</a></div>
       <button class="bg-slate-700 p-1 m-1 h-fit w-fit rounded " @click="togglePopup">Make A Card!</button>
       <button v-if="displayType === true" class="bg-slate-700 p-1 m-1 h-fit w-fit rounded " @click="changeDisplay">Display
@@ -9,7 +9,7 @@
         @click="changeDisplay">Display by date</button>
     </div>
     <div class="overflow-y-scroll max-h-screen">
-      <div v-if="displayType === true" class="grid grid-cols-9 p-3 w-full bg-slate-300">
+      <div v-if="displayType === true" class="grid grid-cols-9 p-3 w-full bg-slate-300" :class="backGround">
         <CardForge v-for="card in Cards" :name="card.name" :multiplier="card.multiplier" :cor="card.color"
           :type="card.type" :description="card.description" class="text-slate-900 hover:border hover:border-red-600" />
       </div>
@@ -28,7 +28,6 @@
         </div>
       </div>
     </div>
-
   </div>
   <CardMaker v-if="showPopup" @close="togglePopup" :colorsArray="colorsArray" />
 </template>
@@ -36,15 +35,16 @@
 <script setup>
 import CardForge from '../components/CardForge.vue';
 import CardMaker from '../components/CardMaker.vue';
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 
 const displayType = ref(true);
 const showPopup = ref(false);
 const Cards = ref([]);
 const colorsArray = ref([]);
-const fireCards = ref([])
-const waterCards = ref([])
-const snowCards = ref([])
+const fireCards = ref([]);
+const waterCards = ref([]);
+const snowCards = ref([]);
+const evilModeActive = ref(false);
 
 const changeDisplay = () => {
   displayType.value = !displayType.value

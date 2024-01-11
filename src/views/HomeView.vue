@@ -3,7 +3,7 @@
         <h1 class="p-32"> <span class="text-5xl font-mono"> The Jeri Files (BETA) </span></h1>
         <div class="flex flex-row">
             <CardForge v-for="card in randomAssortment" :name="card.name" :multiplier="card.multiplier" :cor="card.color"
-                :type="card.type" :description="card.description"
+                :type="card.type" :description="card.description" @mouseover="popCard(index)"
                 class="text-slate-900 hover:border hover:border-red-600" />
         </div>
 
@@ -38,6 +38,30 @@ const shuffleArray = (array) => {
 
     return array;
 };
+
+const getRandomNumber = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+const popCard = (index) => {
+    setTimeout(() => {
+    randomAssortment.value.splice(index, 1); 
+    getANewCard();   
+    }, 500);
+    
+    
+}
+
+const getANewCard = () => {
+    const numCardsToDeal = 2;
+    const randomCards = [];
+  for (let i = 0; i < numCardsToDeal; i++) {
+    const randomIndex = getRandomNumber(0, Cards.value.length - 1);
+    const randomCard = Cards.value[randomIndex];
+    randomCards.push(randomCard);
+  }
+  randomAssortment.value.push(randomCards[0]);
+}
 
 onMounted(async () => {
     try {

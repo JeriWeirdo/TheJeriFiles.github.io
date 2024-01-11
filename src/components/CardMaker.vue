@@ -39,15 +39,16 @@
                         <fieldset>
                             <legend class="text-xl">Card Color</legend>
                             <div v-for="item in colorsArray">
-                                <input v-model="cardColor" class="m-0.5" type="radio" name="color" :id='item.name' @change="getSelectedColor">
+                                <input v-model="cardColor" class="m-0.5" type="radio" name="color" :id='item.name'
+                                    @change="getSelectedColor">
                                 <label :for='item.name'>{{ item.color }}</label>
                             </div>
                         </fieldset>
                     </div>
                 </div>
                 <div class="col-span-1 flex flex-col items-center">
-                    <CardForge class="text-slate-900" :name="this.cardName"
-                        :cor="selectedPreviewColor" :description="this.cardDescription"/>
+                    <CardForge class="text-slate-900" :name="this.cardName" :cor="selectedPreviewColor"
+                        :description="this.cardDescription" />
                     <!-- I want the data here to be the same as the inputed in the forms-->
                     <button type="submit" class="bg-slate-700 p-1 m-3 h-fit w-1/3 rounded">Save New Card!</button>
                 </div>
@@ -62,6 +63,7 @@
   
 <script>
 import CardForge from './CardForge.vue';
+import iziToast from 'iziToast'
 async function makeCard(name, type, color, description, multiplier) {
     try {
         const connected = await fetch("http://localhost:3000/Cards", {
@@ -111,13 +113,13 @@ export default {
 
         getSelectedColor() {
             const selectedInput = document.querySelector('input[name="color"]:checked');
-            
+
             if (selectedInput) {
-                 this.selectedPreviewColor = selectedInput.id;
-                
+                this.selectedPreviewColor = selectedInput.id;
+
                 return this.selectedPreviewColor;
             }
-            return ''; 
+            return '';
         },
         closePopup() {
             this.$emit('close');
@@ -128,21 +130,23 @@ export default {
             let multiplier = Math.floor(Math.random() * 10) + 1;
             const op = Math.floor(Math.random() * 100) + 1;
             console.log(op)
-            if (op >= 95) {multiplier = multiplier + 10}
+            if (op >= 95) { multiplier = multiplier + 10 }
             makeCard(this.cardName, type, color, this.cardDescription, multiplier)
-            .then((response) => {
+                .then((response) => {
                     console.log(op)
                     console.log('Card created:', response);
+
                     alert('Card created sucessfully!', response);
-                    // location.reload()
-                    // Optionally, close the popup or handle the response
+                    location.reload()
                 })
                 .catch((error) => {
                     console.error('Error creating card:', error);
+                    alert('Error while creating card, must be the damn penguins again', error)
                     // Handle error
                 });
         },
     },
 };
+
 </script>
   
