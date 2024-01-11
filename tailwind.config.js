@@ -6,7 +6,12 @@ export default {
     
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'spin-slow': 'spin 3s',
+        'ping-slow': 'ping 16s',
+      }
+    },
   },
   plugins: [],
 }

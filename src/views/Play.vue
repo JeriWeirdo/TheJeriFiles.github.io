@@ -1,41 +1,56 @@
 <template>
   <div class="text-xl text-black flex flex-col w-full h-full" :class="[whatCardDeck()]">
     <div class="absolute place-self-center top-1/3 z-50" v-if="announce">
-      <span class="text-3xl text-white bg-gradient-to-t rounded p-1 uppercase from-amber-950 via-yellow-600 to-amber-500" v-if="roundWinner == 'user'">you won this round </span>
-      <span class="text-3xl text-white bg-gradient-to-t rounded p-1 uppercase from-green-950 via-red-600 to-red-500" v-if="roundWinner == 'computer'">well, ya lost this round</span>
-      <span class="text-3xl text-white bg-gradient-to-t rounded p-1 uppercase from-slate-950 via-gray-600 to-gray-500" v-if="roundWinner == 'tie'">its a tie</span>
+      <span class="text-3xl text-white bg-gradient-to-t rounded p-1 uppercase from-amber-950 via-yellow-600 to-amber-500"
+        v-if="roundWinner == 'user'">you won this round </span>
+      <span class="text-3xl text-white bg-gradient-to-t rounded p-1 uppercase from-green-950 via-red-600 to-red-500"
+        v-if="roundWinner == 'computer'">well, ya lost this round</span>
+      <span class="text-3xl text-white bg-gradient-to-t rounded p-1 uppercase from-slate-950 via-gray-600 to-gray-500"
+        v-if="roundWinner == 'tie'">its a tie</span>
     </div>
-    <div class="w-2/3 flex self-center justify-center ">
+    <div class="w-2/3 flex self-center justify-center">
       <div class="flex flex-col items-center">
         <div class="flex w-300 h-100 fixed -top-20 ">
           <backwordsCardForge class="w-32 h-48" v-for="card in computerDeck" />
           <!-- <CardForge v-if="computerDeck.value == null" v-for="card in computerDeck" :name="card.name"
           :multiplier="card.multiplier" :cor="card.color" :type="card.type" :description="card.description" /> -->
         </div>
-        <div class="flex flex-row w-1/3 justify-between fixed pt-40">
-          <div class="">
-            <p class="self-start bg-gradient-to-t from-slate-300 to-orange-800 p-3 rounded"><span
-                class="text-3xl text-white">{{ points[0].pontos }}</span></p>
-            <MiniCardForge v-for="card in userWinningCards" :name="card.name" :multiplier="card.multiplier"
-              :cor="card.color" :type="card.type" :description="card.description" />
-          </div>
-          <div class="">
-            <p class="self-start bg-gradient-to-t from-slate-300 to-orange-800 p-3 rounded"><span
-                class="text-3xl text-white">{{ points[1].pontos }}</span></p>
-            <MiniCardForge v-for="card in computerWinningCards" :name="card.name" :multiplier="card.multiplier"
-              :cor="card.color" :type="card.type" :description="card.description" />
-          </div>
-        </div>
-
       </div>
     </div>
-    <div class="flex flex-col w-full h-full justify-end items-center ">
 
-      <div class="flex space-x-48 ">
-        <CardForge v-if="OnTable.value == null" v-for="card in OnTable" :name="card.name" :multiplier="card.multiplier"
+    <div class="flex flex-col max-h-screen h-full max-w-screen w-full relative">
+      <div class="flex flex-row justify-between w-full absolute h-full">
+          <div class="bg-slate-900 shadow-lg shadow-orange-900 pr-48 pl-4 py-8 rounded-full rounded-s-none rounded-tr-none border-double border-orange-700 border-l-8 saturate-200">
+            <div class="">
+              <p class="bg-gradient-to-t from-orange-500 to-orange-800 p-4 rounded-full text-center "><span
+                  class="text-3xl text-white ">{{ points[0].pontos }}</span></p>
+            </div>
+                <div class="grid grid-cols-4 gap-x-2 mt-4">
+                  <MiniCardForge v-for="card in userWinningCards" :name="card.name" :multiplier="card.multiplier"
+                    :cor="card.color" :type="card.type" :description="card.description" />
+                </div>
+              </div>
+            <div>
+          </div>
+          <div class="bg-slate-900 pr-4 pl-48 py-8 rounded-full shadow-orange-900 shadow-lg rounded-e-none border-double rounded-br-xl rounded-tl-none border-orange-700 border-r-8 saturate-200">
+              <p class="bg-gradient-to-t from-orange-500 to-orange-800 p-4 rounded-full text-center "><span
+                  class="text-3xl text-white ">{{ points[1].pontos }}</span></p> 
+                 <div class="grid grid-cols-4 gap-x-2 mt-4">
+                  <MiniCardForge v-for="card in computerWinningCards" :name="card.name" :multiplier="card.multiplier"
+                    :cor="card.color" :type="card.type" :description="card.description" />
+                </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col w-full h-full justify-end items-center ">
+      <div class="flex absolute bottom-96 animate-ping-slow">
+        <div v-if="OnTable != null" class="justify-between flex flex-row space-x-36">
+          <CardForge v-for="card in OnTable" :name="card.name" :multiplier="card.multiplier"
           :cor="card.color" :type="card.type" :description="card.description" />
-        <CardForge v-if="computerOnTable.value == null" v-for="card in computerOnTable" :name="card.name"
+          <CardForge v-if="computerOnTable != null" v-for="card in computerOnTable" :name="card.name"
           :multiplier="card.multiplier" :cor="card.color" :type="card.type" :description="card.description" />
+        </div>
       </div>
       <div class="flex">
         <div class="flex flex-row justify-self-end">
@@ -183,7 +198,7 @@ const handleWinner = (userCard, computerCard) => {
     points.value[0].pontos++; // Increase user's points
     OnTable.value.pop();
     computerOnTable.value.pop();
-    setTimeout(() => {noAnnounce()}, 1000)
+    setTimeout(() => { noAnnounce() }, 1000)
   }
   else if (roundWinner.value == 'computer') {
     computerWinningCards.value.push(computerCard);
@@ -191,13 +206,13 @@ const handleWinner = (userCard, computerCard) => {
     OnTable.value.pop();
     computerOnTable.value.pop();
     console.log('before')
-    setTimeout(() => {noAnnounce(), console.log('in')}, 1000);
+    setTimeout(() => { noAnnounce(), console.log('in') }, 1000);
     console.log('after')
   }
   else {
     OnTable.value.pop();
     computerOnTable.value.pop();
-    setTimeout(() => {noAnnounce()}, 1000)
+    setTimeout(() => { noAnnounce() }, 1000)
   }
   noAnnounce()
   dealCards()
@@ -229,9 +244,9 @@ const whatCardDeck = () => {
   let currentCard = OnTable.value
   console.log(currentCard)
   if (currentCard != 0) {
-    if (currentCard[0].type == 'fa-fire') { return "bg-gradient-to-t from-red-300 to-red-800" }
-    else if (currentCard[0].type == 'fa-droplet') { return "bg-gradient-to-t from-sky-300 to-sky-800" }
-    else if (currentCard[0].type == 'fa-snowflake') { return "bg-gradient-to-t from-cyan-300 to-cyan-800" }
+    if (currentCard[0].type == 'fa-fire') { return "bg-gradient-to-t from-red-300 to-red-800 saturate-150" }
+    else if (currentCard[0].type == 'fa-droplet') { return "bg-gradient-to-t from-sky-300 to-sky-800 saturate-150" }
+    else if (currentCard[0].type == 'fa-snowflake') { return "bg-gradient-to-t from-cyan-300 to-cyan-800 saturate-150" }
   }
   else { return "bg-gradient-to-t from-slate-800 to-slate-300" }
 }
