@@ -24,17 +24,11 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import MiniCardForge from './components/MiniCardForge.vue'
 const side = ref(true)
 const sideModalClose = () => {
   side.value = !side.value
 }
-onMounted(async () => {
-  const link = document.createElement('link');
-  link.rel = 'icon';
-  link.type = 'image/x-icon';
-  link.href = 'src/assets/Jeri.ico'; // Adjust the path based on your file structure
-  document.head.appendChild(link);
-});
+
 </script>
