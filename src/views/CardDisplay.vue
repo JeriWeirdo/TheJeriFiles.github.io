@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col max-h-screen ">
+  <div class="flex flex-col max-h-screen max-w-screen w-full">
     <div class="text-white w-full p-1 bg bg-slate-500 flex flex-row">
       <div class=" flex flex-col"><a href="/" class="bg-slate-700 p-1 m-1 h-fit w-fit rounded">Go Back</a></div>
       <button class="bg-slate-700 p-1 m-1 h-fit w-fit rounded " @click="togglePopup">Make A Card!</button>

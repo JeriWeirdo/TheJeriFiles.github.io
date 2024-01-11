@@ -1,18 +1,12 @@
 <template>
-  <div class="w-40 h-64 m-1 p-1  rounded" :class="[opGlint()]">
+  <div class="w-10 h-10 m-1 p-1 bg-white rounded " :class="[opGlint()]">
     <div v-if="multiplier >= 15" class="flex flex-col w-full h-full p-2 rounded justify-between border border-amber-500" :class="[superCardColor()]" >
       <div class="flex justify-between items-center"><i class="fa-solid " :class="type"></i>
-        <p class="flex place-self-end justify-self-start border border-amber-500 bg-slate-50 rounded p-0.5">{{ multiplier }}</p>
       </div>
-      <div class="flex flex-col"><p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate align-self-end mb-0.5 capitalize">{{ name }}</p>
-      <p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate text-xs">{{ description }}</p></div>
     </div>
     <div v-else class="flex flex-col w-full h-full p-2 rounded justify-between border border-amber-500 " :class="cor" >
       <div class="flex justify-between items-center"><i class="fa-solid " :class="type"></i>
-        <p class="flex place-self-end justify-self-start border border-amber-500 bg-slate-50 rounded p-0.5">{{ multiplier }}</p>
       </div>
-      <div class="flex flex-col"><p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate align-self-end mb-0.5 capitalize">{{ name }}</p>
-      <p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate text-xs">{{ description }}</p></div>
     </div>
   </div>
 </template>
@@ -27,8 +21,8 @@
 
   const opGlint = () => {
     if (props.multiplier >= 11) {
-      return "shadow shadow-2xl shadow-black "
-    } else { return " bg-white ";}
+      return "shadow shadow-lg shadow-red-500"
+    } else { return " ";}
   }
   const superCardColor = () => {
     if (props.type == 'fa-fire') { return "bg-gradient-to-t from-red-400 to-red-800" }

@@ -726,6 +726,38 @@
       "description": "Disney's wintry adaptation",
       "multiplier": 3,
       "id": 90
+    },
+    {
+      "name": "FOQUETINHO 🚀",
+      "type": "fa-fire",
+      "color": "bg-amber-500 🚀",
+      "description": "SE VAI SUBIR EM!",
+      "multiplier": 7,
+      "id": 91
+    },
+    {
+      "name": "Bug",
+      "type": "fa-fire",
+      "color": "bg-rose-500",
+      "description": "Me encontre se puder😏",
+      "multiplier": 5,
+      "id": 92
+    },
+    {
+      "name": "error ⚠️",
+      "type": "fa-snowflake",
+      "color": "bg-red-500",
+      "description": "This should not happen",
+      "multiplier": 9,
+      "id": 93
+    },
+    {
+      "name": "power ",
+      "type": "fa-snowflake",
+      "color": "bg-red-500",
+      "description": "pega",
+      "multiplier": 7,
+      "id": 94
     }
   ],
   "colorsArray": [
