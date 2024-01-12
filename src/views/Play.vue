@@ -173,20 +173,20 @@ const compareElements = (userCard, computerCard) => {
   const userElement = userCard.type;
   const computerElement = computerCard.type;
 
-  if (userElement == fire && computerElement == snow) {{ if ((points.value[0].pontos - 2) >= points.value[1].pontos ){endGame("user")} else { roundWinner.value = "user"; handleWinner(userCard, computerCard); }}}
-  else if (userElement == snow && computerElement == water) {{ if ((points.value[0].pontos - 2) >= points.value[1].pontos ){endGame("user")} else {roundWinner.value = "user"; handleWinner(userCard, computerCard);}}}
-  else if (userElement == water && computerElement == fire) {{ if ((points.value[0].pontos - 2) >= points.value[1].pontos ){endGame("user")} else { roundWinner.value = "user"; handleWinner(userCard, computerCard);}}}
-  else if (userElement == snow && computerElement == fire) {{if ((points.value[1].pontos - 2) >= points.value[0].pontos ) {endGame("computer")} else {roundWinner.value = "computer"; handleWinner(userCard, computerCard);}}}
-  else if (userElement == water && computerElement == snow) {{if ((points.value[1].pontos - 2) >= points.value[0].pontos ) {endGame("computer")} else  {roundWinner.value = "computer"; handleWinner(userCard, computerCard);}}}
-  else if (userElement == fire && computerElement == water) {{if ((points.value[1].pontos - 2) >= points.value[0].pontos ) {endGame("computer")} else  {roundWinner.value = "computer"; handleWinner(userCard, computerCard);}}}
+  if (userElement == fire && computerElement == snow) {{ if ((points.value[0].pontos - 2) >= points.value[1].pontos ){endGame("win")} else { roundWinner.value = "user"; handleWinner(userCard, computerCard); }}}
+  else if (userElement == snow && computerElement == water) {{ if ((points.value[0].pontos - 2) >= points.value[1].pontos ){endGame("win")} else {roundWinner.value = "user"; handleWinner(userCard, computerCard);}}}
+  else if (userElement == water && computerElement == fire) {{ if ((points.value[0].pontos - 2) >= points.value[1].pontos ){endGame("win")} else { roundWinner.value = "user"; handleWinner(userCard, computerCard);}}}
+  else if (userElement == snow && computerElement == fire) {{if ((points.value[1].pontos - 2) >= points.value[0].pontos ) {endGame("lose")} else {roundWinner.value = "computer"; handleWinner(userCard, computerCard);}}}
+  else if (userElement == water && computerElement == snow) {{if ((points.value[1].pontos - 2) >= points.value[0].pontos ) {endGame("lose")} else  {roundWinner.value = "computer"; handleWinner(userCard, computerCard);}}}
+  else if (userElement == fire && computerElement == water) {{if ((points.value[1].pontos - 2) >= points.value[0].pontos ) {endGame("lose")} else  {roundWinner.value = "computer"; handleWinner(userCard, computerCard);}}}
   else if (userElement == computerElement) { compareMultipliers(userCard, computerCard) }
 };
 
 const compareMultipliers = (userCard, computerCard) => {
   const userMult = userCard.multiplier
   const computerMult = computerCard.multiplier
-  if (userMult > computerMult) { if ((points.value[0].pontos - 2) >= points.value[1].pontos ){endGame("user")} else { roundWinner.value = "user"; handleWinner(userCard, computerCard) }}
-  else if (userMult < computerMult) {if ((points.value[1].pontos - 2) >= points.value[0].pontos ) {endGame("computer")} else {roundWinner.value = "computer"; handleWinner(userCard, computerCard)} }
+  if (userMult > computerMult) { if ((points.value[0].pontos - 2) >= points.value[1].pontos ){endGame("win")} else { roundWinner.value = "win"; handleWinner(userCard, computerCard) }}
+  else if (userMult < computerMult) {if ((points.value[1].pontos - 2) >= points.value[0].pontos ) {endGame("lose")} else {roundWinner.value = "lose"; handleWinner(userCard, computerCard)} }
   else { roundWinner.value = "tie"; handleWinner(userCard, computerCard) }
 };
 const handleWinner = (userCard, computerCard) => {
