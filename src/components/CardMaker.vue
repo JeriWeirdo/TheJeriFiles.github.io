@@ -63,7 +63,6 @@
   
 <script>
 import CardForge from './CardForge.vue';
-import iziToast from 'iziToast'
 async function makeCard(name, type, color, description, multiplier) {
     try {
         const connected = await fetch("http://localhost:3000/Cards", {

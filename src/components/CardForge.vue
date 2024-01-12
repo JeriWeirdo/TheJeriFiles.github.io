@@ -28,7 +28,7 @@
   const opGlint = () => {
     if (props.multiplier >= 11) {
       return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-cyan-300 to-amber-700 hover:bg-gradient-to-t hover:from-cyan-600 hover:via-yellow-500 hover:to-amber-800"
-    } else { return " bg-slate-50";}
+    } else { return " bg-slate-50"}
   }
   const opGlint2 = () => {
          if (props.multiplier >= 11 && props.type == "fa-fire") { return "bg-gradient-to-t from-red-600 to-red-800 shadow shadow-2xl shadow-amber-400 text-slate-200 hover:text-amber-600"}
