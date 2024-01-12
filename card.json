@@ -806,6 +806,22 @@
       "description": "Is that how you spell the map name?",
       "multiplier": 7,
       "id": 100
+    },
+    {
+      "name": "Mutton chops",
+      "type": "fa-fire",
+      "color": "bg-yellow-500",
+      "description": "NO! Pork chops!",
+      "multiplier": 12,
+      "id": 101
+    },
+    {
+      "name": "Computer PSA",
+      "type": "fa-snowflake",
+      "color": "bg-gray-500",
+      "description": "Don't remove your graphics card while the pc is running",
+      "multiplier": 9,
+      "id": 102
     }
   ],
   "colorsArray": [

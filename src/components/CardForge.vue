@@ -1,18 +1,18 @@
 <template>
-  <div class="w-40 h-64 m-1 p-1  rounded" :class="[opGlint()]">
+  <div class="w-40 h-64 m-1 p-1 text-ellipsis rounded" :class="[opGlint()]">
     <div v-if="multiplier >= 15" class="flex flex-col w-full h-full p-2 rounded justify-between border border-amber-500" :class="[superCardColor()]" >
       <div class="flex justify-between items-center text-amber-400 "><i class="fa-solid " :class="type"></i>
         <p class="flex place-self-end justify-self-start border border-amber-50 rounded p-0.5" :class="[opGlint2()]">{{ multiplier }}</p>
       </div>
-      <div class="flex flex-col"><p class="border border-amber-500 rounded p-0.5 text-slate align-self-end mb-0.5 capitalize" :class="[opGlint2()]">{{ name }}</p>
-      <p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate text-xs">{{ description }}</p></div>
+      <div class="flex flex-col"><p class="border border-amber-500 rounded p-0.5 truncate overflow-hidden align-self-end mb-0.5 capitalize" :class="[opGlint2()]">{{ name }}</p>
+      <p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate-300 text-xs text-balance truncate overflow-hidden">{{ description }}</p></div>
     </div>
     <div v-else class="flex flex-col w-full h-full p-2 rounded justify-between border border-amber-500 " :class="cor" >
       <div class="flex justify-between items-center"><i class="fa-solid " :class="type"></i>
         <p class="flex place-self-end justify-self-start border border-amber-500 bg-slate-50 rounded p-0.5">{{ multiplier }}</p>
       </div>
-      <div class="flex flex-col"><p class="border border-amber-500 rounded p-0.5 text-slate align-self-end mb-0.5 capitalize" :class="[opGlint2()]">{{ name }}</p>
-      <p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate text-xs">{{ description }}</p></div>
+      <div class="flex flex-col"><p class="border border-amber-500 rounded p-0.5 text-slate align-self-end mb-0.5 capitalize truncate overflow-hidden" :class="[opGlint2()]">{{ name }}</p>
+      <p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate text-xs text-balance truncate overflow-hidden">{{ description }}</p></div>
     </div>
   </div>
 </template>

@@ -247,14 +247,6 @@ const whatCardDeck = () => {
   else { return "bg-gradient-to-t from-slate-800 to-slate-300" }
 }
 
-watch(points, (newValues, oldValues) => {
-  const [user, computer] = newValues;
-  console.log('EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
-  if (user.pontos >= (computer.pontos + 3)) { console.log('win!!!!!!!'); endGame("win") }
-  else if (computer.pontos >= (user.pontos + 3)) { console.log("LOSERRRRRRRRRRRRRRRRRRRRRRRRR"); endGame("lose") }
-
-})
-
 onMounted(async () => {
   try {
     const responseCards = await fetch('http://localhost:3000/Cards');

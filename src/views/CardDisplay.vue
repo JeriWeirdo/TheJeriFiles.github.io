@@ -9,7 +9,7 @@
         @click="changeDisplay">Display by date</button>
     </div>
     <div class="overflow-y-scroll max-h-screen">
-      <div v-if="displayType === true" class="grid grid-cols-9 p-3 w-full bg-slate-300" :class="backGround">
+      <div v-if="displayType === true" class="grid grid-cols-9 order-last p-3 w-full bg-slate-300" :class="backGround">
         <CardForge v-for="card in Cards" :name="card.name" :multiplier="card.multiplier" :cor="card.color"
           :type="card.type" :description="card.description" class="text-slate-900 hover:border hover:border-red-600" />
       </div>
