@@ -185,8 +185,8 @@ const compareElements = (userCard, computerCard) => {
 const compareMultipliers = (userCard, computerCard) => {
   const userMult = userCard.multiplier
   const computerMult = computerCard.multiplier
-  if (userMult > computerMult) { if ((points.value[0].pontos - 2) >= points.value[1].pontos ){endGame("win")} else { roundWinner.value = "win"; handleWinner(userCard, computerCard) }}
-  else if (userMult < computerMult) {if ((points.value[1].pontos - 2) >= points.value[0].pontos ) {endGame("lose")} else {roundWinner.value = "lose"; handleWinner(userCard, computerCard)} }
+  if (userMult > computerMult) { if ((points.value[0].pontos - 2) >= points.value[1].pontos){roundWinner.value = "win"; handleWinner(userCard, computerCard); endGame("win")} else { console.log('I am in '); roundWinner.value = "user"; handleWinner(userCard, computerCard); };}
+  else if (userMult < computerMult) {if ((points.value[1].pontos - 2) >= points.value[0].pontos ) {roundWinner.value = "lose"; handleWinner(userCard, computerCard); endGame("lose")} else {roundWinner.value = "computer"; handleWinner(userCard, computerCard);}; }
   else { roundWinner.value = "tie"; handleWinner(userCard, computerCard) }
 };
 const handleWinner = (userCard, computerCard) => {
