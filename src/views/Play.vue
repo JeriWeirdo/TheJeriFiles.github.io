@@ -44,7 +44,7 @@
     </div>
 
     <div class="flex flex-col w-full h-full justify-end items-center ">
-      <div class="flex absolute bottom-96 animate-ping-slow">
+      <div class="flex absolute bottom-96 ">
         <div v-if="OnTable != null" class="justify-between flex flex-row space-x-36">
           <CardForge v-for="card in OnTable" :name="card.name" :multiplier="card.multiplier"
           :cor="card.color" :type="card.type" :description="card.description" />
@@ -153,7 +153,6 @@ const selectComputerRandomCard = () => {
     const randomIndex = getRandomNumber(0, remainingComputerCards.length - 1);
     const randomComputerCard = remainingComputerCards[randomIndex];
     computerOnTable.value.push(randomComputerCard);
-    console.log('randomComputerCard', randomIndex);
     computerDeck.value.splice(randomIndex, 1);
   }
 };
@@ -174,24 +173,23 @@ const compareElements = (userCard, computerCard) => {
   const userElement = userCard.type;
   const computerElement = computerCard.type;
 
-  if (userElement == fire && computerElement == snow) { roundWinner.value = "user"; handleWinner(userCard, computerCard); }
-  else if (userElement == snow && computerElement == water) { roundWinner.value = "user"; handleWinner(userCard, computerCard); }
-  else if (userElement == water && computerElement == fire) { roundWinner.value = "user"; handleWinner(userCard, computerCard); }
-  else if (userElement == snow && computerElement == fire) { roundWinner.value = "computer"; handleWinner(userCard, computerCard); }
-  else if (userElement == water && computerElement == snow) { roundWinner.value = "computer"; handleWinner(userCard, computerCard); }
-  else if (userElement == fire && computerElement == water) { roundWinner.value = "computer"; handleWinner(userCard, computerCard); }
+  if (userElement == fire && computerElement == snow) {{ if ((points.value[0].pontos - 2) >= points.value[1].pontos ){endGame("user")} else { roundWinner.value = "user"; handleWinner(userCard, computerCard); }}}
+  else if (userElement == snow && computerElement == water) {{ if ((points.value[0].pontos - 2) >= points.value[1].pontos ){endGame("user")} else {roundWinner.value = "user"; handleWinner(userCard, computerCard);}}}
+  else if (userElement == water && computerElement == fire) {{ if ((points.value[0].pontos - 2) >= points.value[1].pontos ){endGame("user")} else { roundWinner.value = "user"; handleWinner(userCard, computerCard);}}}
+  else if (userElement == snow && computerElement == fire) {{if ((points.value[1].pontos - 2) >= points.value[0].pontos ) {endGame("computer")} else {roundWinner.value = "computer"; handleWinner(userCard, computerCard);}}}
+  else if (userElement == water && computerElement == snow) {{if ((points.value[1].pontos - 2) >= points.value[0].pontos ) {endGame("computer")} else  {roundWinner.value = "computer"; handleWinner(userCard, computerCard);}}}
+  else if (userElement == fire && computerElement == water) {{if ((points.value[1].pontos - 2) >= points.value[0].pontos ) {endGame("computer")} else  {roundWinner.value = "computer"; handleWinner(userCard, computerCard);}}}
   else if (userElement == computerElement) { compareMultipliers(userCard, computerCard) }
 };
 
 const compareMultipliers = (userCard, computerCard) => {
   const userMult = userCard.multiplier
   const computerMult = computerCard.multiplier
-  if (userMult > computerMult) { roundWinner.value = "user"; handleWinner(userCard, computerCard) }
-  else if (userMult < computerMult) { roundWinner.value = "computer"; handleWinner(userCard, computerCard) }
+  if (userMult > computerMult) { if ((points.value[0].pontos - 2) >= points.value[1].pontos ){endGame("user")} else { roundWinner.value = "user"; handleWinner(userCard, computerCard) }}
+  else if (userMult < computerMult) {if ((points.value[1].pontos - 2) >= points.value[0].pontos ) {endGame("computer")} else {roundWinner.value = "computer"; handleWinner(userCard, computerCard)} }
   else { roundWinner.value = "tie"; handleWinner(userCard, computerCard) }
 };
 const handleWinner = (userCard, computerCard) => {
-  console.log(roundWinner)
 
   if (roundWinner.value == 'user') {
     userWinningCards.value.push(userCard);
@@ -205,9 +203,7 @@ const handleWinner = (userCard, computerCard) => {
     points.value[1].pontos++; // Increase computer's points
     OnTable.value.pop();
     computerOnTable.value.pop();
-    console.log('before')
     setTimeout(() => { noAnnounce(), console.log('in') }, 1000);
-    console.log('after')
   }
   else {
     OnTable.value.pop();
@@ -223,6 +219,7 @@ const noAnnounce = () => {
 }
 
 const endGame = (stats) => {
+  console.log('stats', stats)
   if (stats == "win") { alert("You win the game!"); setTimeout(() => location.reload(), 2000); }
   if (stats == "lose") { alert("L you lose"); setTimeout(() => location.reload(), 2000); }
 }
@@ -242,7 +239,6 @@ const dealCards = () => {
 
 const whatCardDeck = () => {
   let currentCard = OnTable.value
-  console.log(currentCard)
   if (currentCard != 0) {
     if (currentCard[0].type == 'fa-fire') { return "bg-gradient-to-t from-red-300 to-red-800 saturate-150" }
     else if (currentCard[0].type == 'fa-droplet') { return "bg-gradient-to-t from-sky-300 to-sky-800 saturate-150" }

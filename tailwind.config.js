@@ -9,7 +9,7 @@ export default {
     extend: {
       animation: {
         'spin-slow': 'spin 3s',
-        'ping-slow': 'ping 16s',
+        'ping-slow': 'ping 5s',
       }
     },
   },
