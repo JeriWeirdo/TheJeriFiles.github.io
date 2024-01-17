@@ -11,7 +11,7 @@
     <div class="w-2/3 flex self-center justify-center">
       <div class="flex flex-col items-center">
         <div class="flex w-300 h-100 fixed -top-20 ">
-          <backwordsCardForge class="w-32 h-48" v-for="card in computerDeck" />
+          <CardForge :frontFacingCard="false" class="w-32 h-48" v-for="card in computerDeck" />
           <!-- <CardForge v-if="computerDeck.value == null" v-for="card in computerDeck" :name="card.name"
           :multiplier="card.multiplier" :cor="card.color" :type="card.type" :description="card.description" /> -->
         </div>
@@ -73,7 +73,6 @@
 import CardForge from '../components/CardForge.vue';
 import MiniCardForge from '../components/MiniCardForge.vue';
 import { ref, onMounted, watch } from 'vue';
-import backwordsCardForge from '../components/backwordsCardForge.vue';
 
 const Cards = ref([]);
 const colorsArray = ref([]);

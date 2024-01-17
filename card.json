@@ -730,8 +730,8 @@
     {
       "name": "FOQUETINHO 🚀",
       "type": "fa-fire",
-      "color": "bg-amber-500 🚀",
-      "description": "SE VAI SUBIR EM!",
+      "color": "bg-amber-500 ",
+      "description": "SE VAI SUBIR EM!🚀",
       "multiplier": 7,
       "id": 91
     },
@@ -822,6 +822,30 @@
       "description": "Don't remove your graphics card while the pc is running",
       "multiplier": 9,
       "id": 102
+    },
+    {
+      "name": "Frostbite",
+      "type": "fa-snowflake",
+      "color": "bg-sky-500",
+      "description": "The cold kills",
+      "multiplier": 20,
+      "id": 103
+    },
+    {
+      "name": "Supernova",
+      "type": "fa-fire",
+      "color": "bg-red-500",
+      "description": "The energy of a dying star",
+      "multiplier": 20,
+      "id": 104
+    },
+    {
+      "name": "Tsunami",
+      "type": "fa-droplet",
+      "color": "bg-blue-500",
+      "description": "Not even the mightiest  building shall stand",
+      "multiplier": 20,
+      "id": 105
     }
   ],
   "colorsArray": [

@@ -1,15 +1,26 @@
 <template>
-<backwordscardforgeVue v-for="card in cardsOnDeck" :cor="card.color" :multiplier="card.multiplier" :type="card.type" :name="card.name" :description="card.description" class="text-slate-950" />
+  <CardForge :frontFacingCard="false" v-for="card in cardsOnDeck" :cor="card.color" :multiplier="card.multiplier"
+    :type="card.type" :name="card.name" :description="card.description" class="text-slate-950" />
 </template>
 <script setup>
-import {onMounted, ref, watch} from 'vue';
-import backwordscardforgeVue from '../backwordsCardForge.vue';
+import { onMounted, ref, watch } from 'vue';
+import CardForge from '../CardForge.vue';
 const Cards = ref([]);
 let numberOfCardsToSelect = 5;
-const cardsOnDeck = ref([])
+const cardsOnDeck = ref([]);
+const computerOnTable = ref([]);
 const prop = defineProps({
-  opponentCard: Array,
+  opponentCard: Object,
+  Draw: Number,
 })
+
+const emit = defineEmits(['choosenComputerCard']);
+
+watch(() => prop.opponentCard, () => {
+  if (prop.opponentCard != 0) {
+    selectComputerRandomCard();
+  };
+});
 
 const shuffleArray = (array) => {
   let currentIndex = array.length;
@@ -32,24 +43,24 @@ const selectUserRandomCards = () => {
   cardsOnDeck.value = shuffledCards.slice(0, numberOfCardsToSelect);
 };
 
-watch(prop.opponentCard, async(newVal, oldVal)  => {
-  if (newVal != 0){
-    selectComputerRandomCard()
-  }
-}) 
 
 const getRandomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 const selectComputerRandomCard = () => {
-  const remainingComputerCards = cardsOnDeck.value.filter(card => !computerOnTable.value.includes(card));
+  console.log('prop.opponentcard', prop.opponentCard)
+  if (prop.opponentCard != 0 && computerOnTable.value == 0) {
+    const remainingComputerCards = cardsOnDeck.value.filter(card => !computerOnTable.value.includes(card));
 
-  if (remainingComputerCards.length > 0) {
-    const randomIndex = getRandomNumber(0, remainingComputerCards.length - 1);
-    const randomComputerCard = remainingComputerCards[randomIndex];
-    computerOnTable.value.push(randomComputerCard);
-    cardsOnDeck.value.splice(randomIndex, 1);
+    if (remainingComputerCards.length > 0) {
+      const randomIndex = getRandomNumber(0, remainingComputerCards.length - 1);
+      const randomComputerCard = remainingComputerCards[randomIndex];
+      computerOnTable.value.push(randomComputerCard);
+      cardsOnDeck.value.splice(randomIndex, 1);
+      let PcTable = computerOnTable.value
+      emit('choosenComputerCard', PcTable);
+    }
   }
 };
 
@@ -65,5 +76,18 @@ onMounted(async () => {
   } catch (error) {
     console.error('Error fetching data:', error);
   }
+});
+
+watch(() => prop.Draw, () => {
+  const numCardsToDeal = 1;
+
+  const randomCards = [];
+  for (let i = 0; i < numCardsToDeal; i++) {
+    const randomIndex = getRandomNumber(0, Cards.value.length - 1);
+    const randomCard = Cards.value[randomIndex];
+    randomCards.push(randomCard);
+  }
+  cardsOnDeck.value.push(randomCards[0]);
+
 });
 </script>

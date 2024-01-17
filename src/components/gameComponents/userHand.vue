@@ -7,13 +7,20 @@
     </div>
 </template>
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import CardForge from '../CardForge.vue';
 const Cards = ref([]);
 const IsACardOnTable = ref(false)
 let numberOfCardsToSelect = 5;
 const cardsOnDeck = ref([]);
 const emit = defineEmits([ 'choosenCard' ]);
+const prop = defineProps({
+    Draw: Number,
+});
+
+const getRandomNumber = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 const shuffleArray = (array) => {
     let currentIndex = array.length;
@@ -42,12 +49,23 @@ const toTable = (card) => {
         cardsOnDeck.value.splice(index, 1);
         IsACardOnTable.value = true
         emit('choosenCard', card);
-        
-        // setTimeout(() => {
-        //     compareCards()
-        // }, 3000);
+        setTimeout(() => {
+            IsACardOnTable.value = false
+        }, 3000);
     }
 }
+
+watch(() => prop.Draw, () => {
+  const numCardsToDeal = 1;
+
+  const randomCards = [];
+  for (let i = 0; i < numCardsToDeal; i++) {
+    const randomIndex = getRandomNumber(0, Cards.value.length - 1);
+    const randomCard = Cards.value[randomIndex];
+    randomCards.push(randomCard);
+  }
+  cardsOnDeck.value.push(randomCards[0]);
+});
 
 onMounted(async () => {
     try {
