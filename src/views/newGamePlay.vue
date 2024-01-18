@@ -1,5 +1,5 @@
 <template>
-    <div class="flex w-full h-full flex-col justify-between">
+    <div class="flex w-full h-full flex-col justify-between" :class="[whatCardDeck()]">
         <alertBox :announce="announcement" :roundWinner="winner" />
         <div class="flex flex-row justify-between">
             <ScoreBoard :score="points" :Wins="userWinningCards" :Who="'user'"/>
@@ -134,5 +134,16 @@ const treatWinner = () => {
 const endGame = (stats) => {
   if (stats == "win") { announcement.value = true; setTimeout(() => location.reload(), 3000); }
   if (stats == "lose") { announcement.value = true; setTimeout(() => location.reload(), 3000); }
+}
+
+const whatCardDeck = () => {
+  let currentCard = computerTable?.value
+  if (currentCard != 0) {
+    console.log("currentCard", computerTable?.value)
+    if (currentCard.type == 'fa-fire') { return "bg-gradient-to-t from-red-300 to-red-800 saturate-150" }
+    else if (currentCard.type == 'fa-droplet') { return "bg-gradient-to-t from-sky-300 to-sky-800 saturate-150" }
+    else if (currentCard.type == 'fa-snowflake') { return "bg-gradient-to-t from-cyan-300 to-cyan-800 saturate-150" }
+  }
+  else { return "bg-gradient-to-t from-slate-800 to-slate-300" }
 }
 </script>

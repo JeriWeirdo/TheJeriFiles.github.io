@@ -21,7 +21,7 @@ const emit = defineEmits(['choosenComputerCard']);
 
 
 watch(() => prop.effects[1]?.deleteMegaCards, () => {
-    const cardsToKeep = cardsOnDeck.value.filter(obj => obj.multiplier < 10);
+    const cardsToKeep = cardsOnDeck.value.filter(obj => obj.multiplier <= 10);
     console.log('Cards to keep:', cardsToKeep);
 
     let numCardsToDeal = 4 - cardsToKeep.length;
