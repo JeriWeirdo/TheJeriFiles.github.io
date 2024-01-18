@@ -1,6 +1,7 @@
 <template>
     <div class="flex flex-row h-72 items-end">
-        <button :disabled="IsACardOnTable == true" @click="toTable(card)" v-for="card in cardsOnDeck" class="flex flex-row hover:pb-8 disabled:hover:pb-0 ">
+        <button :disabled="IsACardOnTable == true" @click="toTable(card)" v-for="card in cardsOnDeck"
+            class="flex flex-row hover:pb-8 disabled:hover:pb-0 ">
             <CardForge :cor="card.color" :multiplier="card.multiplier" :type="card.type" :name="card.name"
                 :description="card.description" class="text-slate-950" />
         </button>
@@ -13,13 +14,54 @@ const Cards = ref([]);
 const IsACardOnTable = ref(false)
 let numberOfCardsToSelect = 5;
 const cardsOnDeck = ref([]);
-const emit = defineEmits([ 'choosenCard' ]);
+const emit = defineEmits(['choosenCard']);
 const prop = defineProps({
     Draw: Number,
+    effects: Array,
 });
 
+
+watch(() => prop.effects[0]?.deleteMegaCards, () => {
+    const cardsToKeep = cardsOnDeck.value.filter(obj => obj.multiplier < 10);
+    console.log('Cards to keep:', cardsToKeep);
+
+    let numCardsToDeal = 4 - cardsToKeep.length;
+    if (numCardsToDeal < 0) {
+        numCardsToDeal = 0;
+    }
+    console.log("Num cards to deal:", numCardsToDeal);
+
+    const randomCards = [];
+    for (let i = 0; i < numCardsToDeal; i++) {
+        const randomIndex = getRandomNumber(0, Cards.value.length - 1);
+        const randomCard = Cards.value[randomIndex];
+        randomCards.push(randomCard);
+    }
+    cardsOnDeck.value.splice(0, cardsOnDeck.value.length, ...cardsToKeep, ...randomCards);
+});
+
+// watch(() => prop.effects[0]?.deleteMegaCards,
+//     () => {
+//         const cardsToKeep = cardsOnDeck.value.filter(obj => obj.multiplier >= 10);
+//         console.log('cardsToKeep', cardsToKeep);
+//         let numCardsToDeal = cardsToKeep.length - 5;
+//         if (numCardsToDeal < 0){numCardsToDeal = 0};
+//         console.log(" cardsToKeep.length",  cardsToKeep.length);
+//         console.log("numCardsToDeal", numCardsToDeal);
+
+//         const randomCards = [];
+//         for (let i = 0; i < numCardsToDeal; i++) {
+//             const randomIndex = getRandomNumber(0, Cards.value.length - 1);
+//             const randomCard = Cards.value[randomIndex];
+//             randomCards.push(randomCard);
+//         }
+//         cardsOnDeck.value = cardsToKeep;
+//         cardsOnDeck.value.push(...randomCards);
+//     }
+// );
+
 const getRandomNumber = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 const shuffleArray = (array) => {
@@ -55,16 +97,18 @@ const toTable = (card) => {
     }
 }
 
-watch(() => prop.Draw, () => {
-  const numCardsToDeal = 1;
 
-  const randomCards = [];
-  for (let i = 0; i < numCardsToDeal; i++) {
-    const randomIndex = getRandomNumber(0, Cards.value.length - 1);
-    const randomCard = Cards.value[randomIndex];
-    randomCards.push(randomCard);
-  }
-  cardsOnDeck.value.push(randomCards[0]);
+
+watch(() => prop.Draw, () => {
+    const numCardsToDeal = 1;
+
+    const randomCards = [];
+    for (let i = 0; i < numCardsToDeal; i++) {
+        const randomIndex = getRandomNumber(0, Cards.value.length - 1);
+        const randomCard = Cards.value[randomIndex];
+        randomCards.push(randomCard);
+    }
+    cardsOnDeck.value.push(randomCards[0]);
 });
 
 onMounted(async () => {
