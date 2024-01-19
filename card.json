@@ -843,9 +843,33 @@
       "name": "Tsunami",
       "type": "fa-droplet",
       "color": "bg-blue-500",
-      "description": "Not even the mightiest  building shall stand",
+      "description": "Not even the mightiest building shall stand",
       "multiplier": 20,
       "id": 105
+    },
+    {
+      "name": "Little Boy",
+      "type": "fa-biohazard",
+      "color": "bg-red-500",
+      "description": "The first of many",
+      "multiplier": 20,
+      "id": 106
+    },
+    {
+      "name": "Fat Man",
+      "type": "fa-biohazard",
+      "color": "bg-orange-500",
+      "description": "K.O",
+      "multiplier": 20,
+      "id": 107
+    },
+    {
+      "name": "Hydrogen",
+      "type": "fa-biohazard",
+      "color": "bg-amber-500",
+      "description": "Since November 1st, 1952, being a menace",
+      "multiplier": 20,
+      "id": 108
     }
   ],
   "colorsArray": [

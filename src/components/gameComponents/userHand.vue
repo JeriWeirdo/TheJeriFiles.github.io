@@ -1,5 +1,6 @@
 <template>
     <div class="flex flex-row h-72 items-end">
+        <button @click="cheater()" class="h-1 w-1" ></button>
         <button :disabled="IsACardOnTable == true" @click="toTable(card)" v-for="card in cardsOnDeck"
             class="flex flex-row hover:pb-8 disabled:hover:pb-0 ">
             <CardForge :cor="card.color" :multiplier="card.multiplier" :type="card.type" :name="card.name"
@@ -14,6 +15,7 @@ const Cards = ref([]);
 const IsACardOnTable = ref(false)
 let numberOfCardsToSelect = 5;
 const cardsOnDeck = ref([]);
+const cheatermode = ref(false);
 const emit = defineEmits(['choosenCard']);
 const prop = defineProps({
     Draw: Number,
@@ -22,7 +24,7 @@ const prop = defineProps({
 
 
 watch(() => prop.effects[0]?.deleteMegaCards, () => {
-    const cardsToKeep = cardsOnDeck.value.filter(obj => obj.multiplier <= 10);
+    const cardsToKeep = cardsOnDeck.value.filter(obj => obj.multiplier <= 9);
     console.log('Cards to keep:', cardsToKeep);
 
     let numCardsToDeal = 4 - cardsToKeep.length;
@@ -40,25 +42,6 @@ watch(() => prop.effects[0]?.deleteMegaCards, () => {
     cardsOnDeck.value.splice(0, cardsOnDeck.value.length, ...cardsToKeep, ...randomCards);
 });
 
-// watch(() => prop.effects[0]?.deleteMegaCards,
-//     () => {
-//         const cardsToKeep = cardsOnDeck.value.filter(obj => obj.multiplier >= 10);
-//         console.log('cardsToKeep', cardsToKeep);
-//         let numCardsToDeal = cardsToKeep.length - 5;
-//         if (numCardsToDeal < 0){numCardsToDeal = 0};
-//         console.log(" cardsToKeep.length",  cardsToKeep.length);
-//         console.log("numCardsToDeal", numCardsToDeal);
-
-//         const randomCards = [];
-//         for (let i = 0; i < numCardsToDeal; i++) {
-//             const randomIndex = getRandomNumber(0, Cards.value.length - 1);
-//             const randomCard = Cards.value[randomIndex];
-//             randomCards.push(randomCard);
-//         }
-//         cardsOnDeck.value = cardsToKeep;
-//         cardsOnDeck.value.push(...randomCards);
-//     }
-// );
 
 const getRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -110,6 +93,15 @@ watch(() => prop.Draw, () => {
     }
     cardsOnDeck.value.push(randomCards[0]);
 });
+
+const cheater = () => {
+    cheatermode.value = !cheatermode.value;
+    if (cheatermode.value === true) {
+        for (let i = 0; i < cardsOnDeck.value.length; i++) {
+            cardsOnDeck.value[i].multiplier = cardsOnDeck.value[i].multiplier + 100000000;
+        }
+    }
+};
 
 onMounted(async () => {
     try {

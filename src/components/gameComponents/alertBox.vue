@@ -1,6 +1,6 @@
 <template>
     <div class="absolute left-1/2 top-1/3 z-50" v-if="announce">
-        <span class="text-3xl text-white bg-gradient-to-t rounded p-1 uppercase from-lime-950 via-emerald-600 to-lime-500 animate-ping"
+        <span class="text-3xl text-white bg-gradient-to-t rounded p-1 uppercase from-lime-950 via-emerald-600 to-lime-500"
             v-if="roundWinner == 'user'">you won this round </span>
         <span class="text-3xl text-white bg-gradient-to-t rounded p-1 uppercase from-red-950 via-red-600 to-red-500 "
             v-if="roundWinner == 'pc'">well, ya lost this round</span>

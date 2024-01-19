@@ -26,6 +26,10 @@
           <CardForge v-for="card in snowCards" :name="card.name" :multiplier="card.multiplier" :cor="card.color"
             :type="card.type" :description="card.description" class="text-slate-900 hover:border hover:border-red-600" />
         </div>
+        <div class="flex flex-col">
+          <CardForge v-for="card in biohazardCards" :name="card.name" :multiplier="card.multiplier" :cor="card.color"
+            :type="card.type" :description="card.description" class="text-slate-900 hover:border hover:border-red-600" />
+        </div>
       </div>
     </div>
   </div>
@@ -35,7 +39,7 @@
 <script setup>
 import CardForge from '../components/CardForge.vue';
 import CardMaker from '../components/CardMaker.vue';
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const displayType = ref(true);
 const showPopup = ref(false);
@@ -44,7 +48,7 @@ const colorsArray = ref([]);
 const fireCards = ref([]);
 const waterCards = ref([]);
 const snowCards = ref([]);
-const evilModeActive = ref(false);
+const biohazardCards = ref([]);
 
 const changeDisplay = () => {
   displayType.value = !displayType.value
@@ -54,6 +58,7 @@ const separateByType = () => {
   fireCards.value = Cards.value.filter(card => card.type == "fa-fire")
   waterCards.value = Cards.value.filter(card => card.type == "fa-droplet")
   snowCards.value = Cards.value.filter(card => card.type == "fa-snowflake")
+  biohazardCards.value = Cards.value.filter(card => card.type == "fa-biohazard")
   console.log('fa-fire', fireCards);
 }
 

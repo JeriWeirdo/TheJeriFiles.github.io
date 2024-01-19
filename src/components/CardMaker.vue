@@ -124,15 +124,17 @@ export default {
             this.$emit('close');
         },
         createCard() {
-            const type = document.querySelector('input[name="element"]:checked').id;
+            let type = document.querySelector('input[name="element"]:checked').id;
             const color = document.querySelector('input[name="color"]:checked').id;
             let multiplier = Math.floor(Math.random() * 10) + 1;
             const op = Math.floor(Math.random() * 100) + 1;
-            console.log(op)
+            const isBiohazard = Math.floor(Math.random() * 1000) + 1;
             if (op >= 95) { multiplier = multiplier + 10 }
+            if (1945 >= isBiohazard >= 1952) { type = 'fa-biohazard'; multiplier = 20; }
             makeCard(this.cardName, type, color, this.cardDescription, multiplier)
                 .then((response) => {
-                    console.log(op)
+                    console.log("op", op)
+                    console.log("isBiohazard", isBiohazard);
                     console.log('Card created:', response);
 
                     alert('Card created sucessfully!', response);

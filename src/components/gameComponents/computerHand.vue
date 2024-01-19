@@ -21,7 +21,7 @@ const emit = defineEmits(['choosenComputerCard']);
 
 
 watch(() => prop.effects[1]?.deleteMegaCards, () => {
-    const cardsToKeep = cardsOnDeck.value.filter(obj => obj.multiplier <= 10);
+    const cardsToKeep = cardsOnDeck.value.filter(obj => obj.multiplier <= 9);
     console.log('Cards to keep:', cardsToKeep);
 
     let numCardsToDeal = 4 - cardsToKeep.length;
@@ -36,45 +36,9 @@ watch(() => prop.effects[1]?.deleteMegaCards, () => {
         const randomCard = Cards.value[randomIndex];
         randomCards.push(randomCard);
     }
-
-    // Clear the existing array and add the cards to keep and the new random cards
     cardsOnDeck.value.splice(0, cardsOnDeck.value.length, ...cardsToKeep, ...randomCards);
 });
 
-// watch(() => prop.effects[1]?.deleteMegaCards,
-//     () => {
-//         const Cards0 = cardsOnDeck.value.filter(obj => obj.multiplier >= 10);
-//         console.log('Cards0', Cards0);
-//         let numCardsToDeal = Cards0.length - 5;
-//         if (numCardsToDeal < 0){numCardsToDeal = 0};
-//         console.log(" Cards0.length",  Cards0.length);
-//         console.log("numCardsToDeal", numCardsToDeal);
-
-//         const randomCards = [];
-//         for (let i = 0; i < numCardsToDeal; i++) {
-//             const randomIndex = getRandomNumber(0, Cards.value.length - 1);
-//             const randomCard = Cards.value[randomIndex];
-//             randomCards.push(randomCard);
-//         }
-//         cardsOnDeck.value = Cards0;
-//         cardsOnDeck.value.push(...randomCards);
-//     }
-// );
-
-// watch(() => prop.effects[1]?.deleteMegaCards,
-//   () => {
-//     cardsOnDeck.value = cardsOnDeck.value.filter(obj => obj.multiplier >= 10);
-//     let numCardsToDeal = 5 - cardsOnDeck.value.length;
-
-//     const randomCards = [];
-//     for (let i = 0; i < numCardsToDeal; i++) {
-//       const randomIndex = getRandomNumber(0, Cards.value.length - 1);
-//       const randomCard = Cards.value[randomIndex];
-//       randomCards.push(randomCard);
-//     }
-//     cardsOnDeck.value.push(...randomCards);
-//   }
-// );
 
 
 watch(() => prop.opponentCard, () => {

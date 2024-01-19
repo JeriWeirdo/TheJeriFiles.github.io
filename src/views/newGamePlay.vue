@@ -1,5 +1,5 @@
 <template>
-    <div class="flex w-full h-full flex-col justify-between" :class="[whatCardDeck()]">
+    <div class="flex w-full h-full flex-col justify-between" :class="bg">
         <alertBox :announce="announcement" :roundWinner="winner" />
         <div class="flex flex-row justify-between">
             <ScoreBoard :score="points" :Wins="userWinningCards" :Who="'user'"/>
@@ -37,7 +37,7 @@ import computerHand from '../components/gameComponents/computerHand.vue';
 import CardForge from '../components/CardForge.vue';
 import alertBox from '../components/gameComponents/alertBox.vue';
 import ScoreBoard from '../components/gameComponents/ScoreBoard.vue';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const onTable = ref([]);
 const computerTable = ref([]);
@@ -46,14 +46,17 @@ const userWinningCards = ref([]);
 const pcWinningCards = ref([]);
 const timeToDraw = ref(0);
 const announcement = ref(false);
+const bg = ref("")
 const effects = ref([
     {
         user: 'user',
         deleteMegaCards: 0,
+        killpoints: 0,
     },
     {
         user: 'pc',
         deleteMegaCards: 0,
+        killpoints: 0,
     },
 ])
 const points = ref([
@@ -69,6 +72,9 @@ const points = ref([
 
 const setCards = (card) => {
     onTable.value != 0 ? onTable.value == [] && onTable.value.push(card) : onTable.value.push(card);
+    if (onTable.value[0].type == 'fa-fire') { bg.value = "bg-gradient-to-t from-red-300 to-red-800 saturate-150" }
+    else if (onTable.value[0].type == 'fa-droplet') { bg.value = "bg-gradient-to-t from-sky-300 to-sky-800 saturate-150" }
+    else if (onTable.value[0].type == 'fa-snowflake') { bg.value = "bg-gradient-to-t from-cyan-300 to-cyan-800 saturate-150" }
 };
 const getComputerCards = (PcTable) => {
     computerTable.value = PcTable.length !== 0 ? PcTable : [];
@@ -86,7 +92,10 @@ const getComputerCards = (PcTable) => {
 const compareType = (onTable, computerTable) => {
     console.log('IM COMPARING TYPES');
     console.log('THE TYPES ARE:', onTable.value[0].type, computerTable.value[0].type);
-         if (onTable.value[0].type == "fa-fire" && computerTable.value[0].type == "fa-snowflake") {if ((points.value[0].punkte - 2) >= points.value[1].punkte ){endGame("win"); winner.value = 'GameWon'} else {winner.value = 'user'; treatWinner(onTable, computerTable)}}
+         if (onTable.value[0].type == "fa-biohazard" && computerTable.value[0].type != "fa-biohazard") {if ((points.value[0].punkte - 2) >= points.value[1].punkte ){endGame("win"); winner.value = 'GameWon'} else {winner.value = 'user'; treatWinner(onTable, computerTable); deletePoints('pc')}}
+    else if (onTable.value[0].type != "fa-biohazard" && computerTable.value[0].type == "fa-biohazard") {if ((points.value[1].punkte - 2) >= points.value[0].punkte ){endGame("lose"); winner.value = 'GameLost'} else {winner.value = 'pc'; treatWinner(onTable, computerTable); deletePoints('user')}}
+    else if (onTable.value[0].type == "fa-biohazard" && computerTable.value[0].type == "fa-biohazard") {winner.value = 'tie'; treatWinner(onTable, computerTable);}
+    else if (onTable.value[0].type == "fa-fire" && computerTable.value[0].type == "fa-snowflake") {if ((points.value[0].punkte - 2) >= points.value[1].punkte ){endGame("win"); winner.value = 'GameWon'} else {winner.value = 'user'; treatWinner(onTable, computerTable)}}
     else if (onTable.value[0].type == "fa-snowflake" && computerTable.value[0].type == "fa-droplet") {if ((points.value[0].punkte - 2) >= points.value[1].punkte ){endGame("win"); winner.value = 'GameWon'} else {winner.value = 'user'; treatWinner(onTable, computerTable)}}
     else if (onTable.value[0].type == "fa-droplet" && computerTable.value[0].type == "fa-fire") {if ((points.value[0].punkte - 2) >= points.value[1].punkte ){endGame("win"); winner.value = 'GameWon'} else {winner.value = 'user'; treatWinner(onTable, computerTable)}}
     else if (onTable.value[0].type == "fa-fire" && computerTable.value[0].type == "fa-droplet") {if ((points.value[1].punkte - 2) >= points.value[0].punkte ) {endGame("lose"); winner.value = 'GameLost'} else {winner.value = 'pc'; treatWinner(onTable, computerTable)}}
@@ -122,6 +131,7 @@ const treatWinner = () => {
     }
     console.log('THE WINNER IS', winner.value, ("!"));
     onTable.value.pop();
+    bg.value = "bg-gradient-to-t from-slate-800 to-slate-300";
     setTimeout(() => {
         computerTable.value.splice(0, 1);
     }, 10);
@@ -136,14 +146,17 @@ const endGame = (stats) => {
   if (stats == "lose") { announcement.value = true; setTimeout(() => location.reload(), 3000); }
 }
 
-const whatCardDeck = () => {
-  let currentCard = computerTable?.value
-  if (currentCard != 0) {
-    console.log("currentCard", computerTable?.value)
-    if (currentCard.type == 'fa-fire') { return "bg-gradient-to-t from-red-300 to-red-800 saturate-150" }
-    else if (currentCard.type == 'fa-droplet') { return "bg-gradient-to-t from-sky-300 to-sky-800 saturate-150" }
-    else if (currentCard.type == 'fa-snowflake') { return "bg-gradient-to-t from-cyan-300 to-cyan-800 saturate-150" }
-  }
-  else { return "bg-gradient-to-t from-slate-800 to-slate-300" }
-}
+const deletePoints = (who) => {
+    if (who == "user") {
+        if (points.value[0].punkte > 0){
+            points.value[0].punkte--}}
+    else if (who == "pc") {
+        if (points.value[1].punkte > 0){
+            points.value[1].punkte--}}
+};
+
+onMounted(async () => {
+    bg.value = "bg-gradient-to-t from-slate-800 to-slate-300";
+}); 
+
 </script>

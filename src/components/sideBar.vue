@@ -6,9 +6,9 @@
       </div>
       <a class="bg-slate-700 flex p-1 rounded items-center m-2" href="/#/play"><i class="fa-solid fa-play pr-2"></i> Play A Game</a>
       <a class="bg-slate-700 flex p-1 rounded items-center m-2" href="/#/display"><i class="fa-solid fa-sd-card pr-2"></i> CardDisplay</a>
-      <MiniCardForge class="text-slate-800" :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-fire'" />
-      <MiniCardForge class="text-slate-800" :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-droplet'" />
-      <MiniCardForge class="text-slate-800" :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-snowflake'" />
+      <MiniCardForge :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-fire'" />
+      <MiniCardForge :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-droplet'" />
+      <MiniCardForge :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-snowflake'" />
 
     </div>
     <div v-else class="flex flex-col items-center p-3 w-fit bg-slate-600 h-screen">
@@ -16,9 +16,9 @@
       <a class="bg-slate-700 flex p-1 rounded items-center mb-4 text-xl" href="/#/"><i class="fa-regular fa-file-excel"></i></a>
       <a class="bg-slate-700 flex p-1 rounded items-center mb-4" href="/#/play"><i class="fa-solid fa-play"></i></a>
       <a class="bg-slate-700 flex p-1 rounded items-center mb-4" href="/#/display"><i class="fa-solid fa-sd-card"></i></a>
-      <MiniCardForge class="text-slate-800" :mini="true" :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-fire'" />
-      <MiniCardForge class="text-slate-800" :mini="true" :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-droplet'" />
-      <MiniCardForge class="text-slate-800" :mini="true" :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-snowflake'" />
+      <MiniCardForge :mini="true" :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-fire'" />
+      <MiniCardForge :mini="true" :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-droplet'" />
+      <MiniCardForge :mini="true" :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-snowflake'" />
       <div class="bg-transparent flex justify-end">
         <a href="/#/play/newergame" class="absolute bottom-0 left-0 text-transparent p-2">a
         </a>
