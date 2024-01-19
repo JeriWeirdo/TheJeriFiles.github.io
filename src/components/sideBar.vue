@@ -4,7 +4,7 @@
       <div class="bg-slate-700 flex p-2 rounded m-2">
         <a class="text-xl" href="/#/"> <i class="fa-regular fa-file-excel pr-2"></i> <span class=""> The Jeri Files (Beta)</span></a>
       </div>
-      <a class="bg-slate-700 flex p-1 rounded items-center m-2" href="/#/play"><i class="fa-solid fa-play pr-2"></i> Play A Game</a>
+      <a class="bg-slate-700 flex p-1 rounded items-center m-2" href="/#/play/newergame"><i class="fa-solid fa-play pr-2"></i> Play A Game</a>
       <a class="bg-slate-700 flex p-1 rounded items-center m-2" href="/#/display"><i class="fa-solid fa-sd-card pr-2"></i> CardDisplay</a>
       <MiniCardForge :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-fire'" />
       <MiniCardForge :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-droplet'" />
@@ -20,7 +20,7 @@
       <MiniCardForge :mini="true" :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-droplet'" />
       <MiniCardForge :mini="true" :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-snowflake'" />
       <div class="bg-transparent flex justify-end">
-        <a href="/#/play/newergame" class="absolute bottom-0 left-0 text-transparent p-2">a
+        <a href="/#/play" class="absolute bottom-0 left-0 text-transparent p-2">a
         </a>
       </div>
     </div>
