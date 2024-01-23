@@ -110,7 +110,7 @@ onMounted(async () => {
             Cards.value = await responseCards.json();
             selectUserRandomCards()
         } else {
-            throw new Error('Failed to fetch');
+            throw new Error('Failed to fetch'); 
         }
     } catch (error) {
         console.error('Error fetching data:', error);

@@ -67,8 +67,8 @@ const togglePopup = () => {
 }
 onMounted(async () => {
   try {
-    const responseCards = await fetch('http://192.168.12.180:3000/Cards');
-    const responseColors = await fetch('http://192.168.12.180:3000/colorsArray')
+    const responseCards = await fetch('http://cardsjson.vercel.app/Cards');
+    const responseColors = await fetch('http://cardsjson.vercel.app/SScolorsArray')
     if (responseCards.ok && responseColors.ok) {
       Cards.value = await responseCards.json();
       colorsArray.value = await responseColors.json();
