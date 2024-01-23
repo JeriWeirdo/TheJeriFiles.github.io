@@ -51,6 +51,7 @@
                         :description="this.cardDescription" />
                     <!-- I want the data here to be the same as the inputed in the forms-->
                     <button type="submit" class="bg-slate-700 p-1 m-3 h-fit w-1/3 rounded">Save New Card!</button>
+                    <p class="bg-slate-400 mx-4 text-sm p-1 rounded">Attention, there is currently no way to create new cards, if you want to make a new card, contact Jeri on Youtube and he will add new cards for you, the site has no dedicated DB yet, and can only handle GET requests. Thank you!</p>
                 </div>
             </div>
         </form>
