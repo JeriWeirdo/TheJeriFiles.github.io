@@ -105,7 +105,7 @@ const cheater = () => {
 
 onMounted(async () => {
     try {
-        const responseCards = await fetch('http://cardsjson.vercel.app/Cards');
+        const responseCards = await fetch('https://cardsjson.vercel.app/Cards');
         if (responseCards.ok) {
             Cards.value = await responseCards.json();
             selectUserRandomCards()
