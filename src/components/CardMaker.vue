@@ -65,7 +65,7 @@
 import CardForge from './CardForge.vue';
 async function makeCard(name, type, color, description, multiplier) {
     try {
-        const connected = await fetch("http://cardsjson.vercel.app/Cards", {
+        const connected = await fetch("https://cardsjson.vercel.app/Cards", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
