@@ -105,7 +105,7 @@ const cheater = () => {
 
 onMounted(async () => {
     try {
-        const responseCards = await fetch('http://localhost:3000/Cards');
+        const responseCards = await fetch('http://179.162.35.170:3000/Cards');
         if (responseCards.ok) {
             Cards.value = await responseCards.json();
             selectUserRandomCards()

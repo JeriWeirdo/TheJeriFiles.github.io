@@ -65,7 +65,7 @@
 import CardForge from './CardForge.vue';
 async function makeCard(name, type, color, description, multiplier) {
     try {
-        const connected = await fetch("http://localhost:3000/Cards", {
+        const connected = await fetch("http://179.162.35.170:3000/Cards", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
