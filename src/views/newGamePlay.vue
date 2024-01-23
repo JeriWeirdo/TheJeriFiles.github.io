@@ -92,7 +92,9 @@ const getComputerCards = (PcTable) => {
 const compareType = (onTable, computerTable) => {
     console.log('IM COMPARING TYPES');
     console.log('THE TYPES ARE:', onTable.value[0].type, computerTable.value[0].type);
-         if (onTable.value[0].type == "fa-biohazard" && computerTable.value[0].type != "fa-biohazard") {if ((points.value[0].punkte - 2) >= points.value[1].punkte ){endGame("win"); winner.value = 'GameWon'} else {winner.value = 'user'; treatWinner(onTable, computerTable); deletePoints('pc')}}
+         if (onTable.value[0].type == "fa-face-angry" && computerTable.value[0].type != "fa-face-angry") {if ((points.value[0].punkte - 2) >= points.value[1].punkte ){endGame("win"); winner.value = 'GameWon'} else {winner.value = 'user'; treatWinner(onTable, computerTable); lessPower('pc')}}
+    else if (onTable.value[0].type != "fa-face-angry" && computerTable.value[0].type == "fa-face-angry") {if ((points.value[1].punkte - 2) >= points.value[0].punkte ){endGame("lose"); winner.value = 'GameLost'} else {winner.value = 'pc'; treatWinner(onTable, computerTable); lessPower('user')}}
+    else if (onTable.value[0].type == "fa-biohazard" && computerTable.value[0].type != "fa-biohazard") {if ((points.value[0].punkte - 2) >= points.value[1].punkte ){endGame("win"); winner.value = 'GameWon'} else {winner.value = 'user'; treatWinner(onTable, computerTable); deletePoints('pc')}}
     else if (onTable.value[0].type != "fa-biohazard" && computerTable.value[0].type == "fa-biohazard") {if ((points.value[1].punkte - 2) >= points.value[0].punkte ){endGame("lose"); winner.value = 'GameLost'} else {winner.value = 'pc'; treatWinner(onTable, computerTable); deletePoints('user')}}
     else if (onTable.value[0].type == "fa-biohazard" && computerTable.value[0].type == "fa-biohazard") {winner.value = 'tie'; treatWinner(onTable, computerTable);}
     else if (onTable.value[0].type == "fa-fire" && computerTable.value[0].type == "fa-snowflake") {if ((points.value[0].punkte - 2) >= points.value[1].punkte ){endGame("win"); winner.value = 'GameWon'} else {winner.value = 'user'; treatWinner(onTable, computerTable)}}
@@ -153,6 +155,15 @@ const deletePoints = (who) => {
     else if (who == "pc") {
         if (points.value[1].punkte > 0){
             points.value[1].punkte--}}
+};
+const lessPower = (who) => {
+    if (who == "user") {
+        effects.value[0].killpoints ++
+        }
+    else if (who == "pc") {
+        effects.value[1].killpoints ++
+    }
+
 };
 
 onMounted(async () => {

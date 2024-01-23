@@ -41,5 +41,6 @@
     else if (props.type == 'fa-droplet') { return "bg-gradient-to-t from-indigo-200 to-indigo-800" }
     else if (props.type == 'fa-snowflake') { return "bg-gradient-to-t from-cyan-200 to-cyan-800" }
     else if (props.type == 'fa-biohazard') { return "bg-gradient-to-t from-green-200 to-lime-800" }
+    else if (props.type == 'fa-face-angry') { return "bg-gradient-to-t from-amber-200 to-yellow-800" }
   }
 </script>

@@ -55,6 +55,7 @@
     else if (props.multiplier >= 11 && props.type == "fa-droplet") { return "bg-gradient-to-t from-blue-400 to-blue-800 shadow shadow-2xl shadow-amber-400 text-slate-200 hover:text-amber-600"}
     else if (props.multiplier >= 11 && props.type == "fa-snowflake") { return "bg-gradient-to-t from-slate-300 to-sky-600 shadow shadow-2xl shadow-amber-400 text-slate-100 hover:text-amber-600"}
     else if (props.multiplier >= 11 && props.type == "fa-biohazard") { return "bg-gradient-to-t from-green-900 to-lime-600 shadow shadow-2xl shadow-amber-400 text-slate-100 hover:text-amber-800"}
+    else if (props.multiplier >= 11 && props.type == "fa-face-angry") { return "bg-gradient-to-t from-amber-900 to-yellow-600 shadow shadow-2xl shadow-amber-400 text-slate-100 hover:text-amber-800"}
       else {return " bg-slate-50"}
     
   }
@@ -63,5 +64,6 @@
     else if (props.type == 'fa-droplet') { return "bg-gradient-to-t from-indigo-200 to-indigo-800" }
     else if (props.type == 'fa-snowflake') { return "bg-gradient-to-t from-cyan-200 to-cyan-800" }
     else if (props.type == 'fa-biohazard') { return "bg-gradient-to-t from-green-200 to-lime-800" }
+    else if (props.type == 'fa-face-angry') { return "bg-gradient-to-t from-amber-200 to-yellow-800" }
   }
 </script>

@@ -93,6 +93,13 @@ watch(() => prop.Draw, () => {
     }
     cardsOnDeck.value.push(randomCards[0]);
 });
+watch(() => prop.effects[0].killpoints, () => {
+  console.log("EEEEEEEEEEEEEEEEEEEEE");
+
+    for (let i = 0; i < cardsOnDeck.value.length; i++) {
+            cardsOnDeck.value[i].multiplier = cardsOnDeck.value[i].multiplier - 1;
+        }
+});
 
 const cheater = () => {
     cheatermode.value = !cheatermode.value;

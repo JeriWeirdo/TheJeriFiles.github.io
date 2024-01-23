@@ -1,5 +1,5 @@
 <template>
-  <CardForge :frontFacingCard="true" v-for="card in cardsOnDeck" :cor="card.color" :multiplier="card.multiplier"
+  <CardForge :frontFacingCard="false" v-for="card in cardsOnDeck" :cor="card.color" :multiplier="card.multiplier"
     :type="card.type" :name="card.name" :description="card.description" class="text-slate-950" />
 </template>
 <script setup>
@@ -100,6 +100,13 @@ onMounted(async () => {
   } catch (error) {
     console.error('Error fetching data:', error);
   }
+});
+console.log(prop.effects)
+watch(() => prop.effects[1].killpoints, () => {
+  console.log("EEEEEEEEEEEEEEEEEEEEE");
+    for (let i = 0; i < cardsOnDeck.value.length; i++) {
+            cardsOnDeck.value[i].multiplier = cardsOnDeck.value[i].multiplier - 1;
+        }
 });
 
 watch(() => prop.Draw, () => {
