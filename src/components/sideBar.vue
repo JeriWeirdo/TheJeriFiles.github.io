@@ -14,7 +14,7 @@
     <div v-else class="flex flex-col items-center p-3 w-fit bg-slate-600 h-screen">
       <button @click="sideModalClose" class="mb-4"><i class="fa-solid fa-bars"></i></button>
       <a class="bg-slate-700 flex p-1 rounded items-center mb-4 text-xl" href="/#/"><i class="fa-regular fa-file-excel"></i></a>
-      <a class="bg-slate-700 flex p-1 rounded items-center mb-4" href="/#/play"><i class="fa-solid fa-play"></i></a>
+      <a class="bg-slate-700 flex p-1 rounded items-center mb-4" href="/#/play/newergame"><i class="fa-solid fa-play"></i></a>
       <a class="bg-slate-700 flex p-1 rounded items-center mb-4" href="/#/display"><i class="fa-solid fa-sd-card"></i></a>
       <MiniCardForge :mini="true" :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-fire'" />
       <MiniCardForge :mini="true" :name="'a'" :multiplier="19" :cor="'bg-amber-800'" :type="'fa-droplet'" />
