@@ -68,6 +68,8 @@ const elementalcolor = () => {
   if (props.type == "fa-fire") { return "bg-gradient-to-t from-red-800 to-red-600" }
   else if (props.type == "fa-snowflake") { return "bg-gradient-to-t from-sky-700 to-sky-200" }
   else if (props.type == "fa-droplet") { return "bg-gradient-to-t from-blue-700 to-sky-400" }
+  else if (props.type == "fa-wind") { return "bg-gradient-to-t from-white via-white to-sky-400" }
+  else if (props.type == "fa-gem") { return "bg-gradient-to-t from-slate-700 to-stone-400" }
   else if (props.type == "fa-biohazard") { return "bg-gradient-to-t from-green-800 to-lime-600" }
   else if (props.type == "fa-crown") { return "bg-gradient-to-t from-yellow-600 to-yellow-800" }
   else { return "bg-slate-600" }
@@ -77,6 +79,8 @@ const opGlint = () => {
     if (props.type == "fa-fire") {return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-red-700 via-red-800 to-amber-700 hover:bg-gradient-to-t hover:from-red-600 hover:via-yellow-500 hover:to-amber-800"}
     if (props.type == "fa-snowflake") {return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-sky-700 via-sky-800 to-amber-700 hover:bg-gradient-to-t hover:from-slate-600 hover:via-sky-500 hover:to-amber-800"}
     if (props.type == "fa-droplet") {return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-blue-700 via-blue-800 to-amber-700 hover:bg-gradient-to-t hover:from-indigo-600 hover:via-blue-500 hover:to-amber-800"}
+    if (props.type == "fa-wind") {return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-blue-100 via-blue-300 to-amber-700 hover:bg-gradient-to-t hover:from-sky-300 hover:via-blue-400 hover:to-amber-800"}
+    if (props.type == "fa-gem") {return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-slate-700 via-stone-800 to-amber-700 hover:bg-gradient-to-t hover:from-slate-600 hover:via-stone-500 hover:to-amber-800"}
     if (props.type == "fa-biohazard") {return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-green-700 via-lime-800 to-amber-700 hover:bg-gradient-to-t hover:from-red-600 hover:via-yellow-500 hover:to-neutral-900"}
     if (props.type == "fa-crown") {return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-yellow-700 via-amber-500 to-amber-700 hover:bg-gradient-to-t hover:from-amber-600 hover:via-red-400 hover:to-amber-800"}
     else {return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-cyan-300 to-amber-700 hover:bg-gradient-to-t hover:from-cyan-600 hover:via-yellow-500 hover:to-amber-800"}
@@ -87,6 +91,8 @@ const opGlint2 = () => {
   else if (props.multiplier >= 11 && props.type == "fa-fire") { return "bg-gradient-to-t from-red-600 to-red-800 shadow shadow-2xl shadow-amber-400 text-slate-200 hover:text-amber-600" }
   else if (props.multiplier >= 11 && props.type == "fa-droplet") { return "bg-gradient-to-t from-blue-400 to-blue-800 shadow shadow-2xl shadow-amber-400 text-slate-200 hover:text-amber-600" }
   else if (props.multiplier >= 11 && props.type == "fa-snowflake") { return "bg-gradient-to-t from-slate-300 to-sky-600 shadow shadow-2xl shadow-amber-400 text-slate-100 hover:text-amber-600" }
+  else if (props.multiplier >= 11 && props.type == "fa-wind") { return "bg-gradient-to-t from-white to-sky-300 shadow shadow-2xl shadow-amber-400 text-slate-100 hover:text-amber-600" }
+  else if (props.multiplier >= 11 && props.type == "fa-gem") { return "bg-gradient-to-t from-slate-600 to-stone-800 shadow shadow-2xl shadow-amber-400 text-slate-100 hover:text-amber-600" }
   else if (props.multiplier >= 11 && props.type == "fa-biohazard") { return "bg-gradient-to-t from-green-900 to-lime-600 shadow shadow-2xl shadow-amber-400 text-slate-100 hover:text-amber-800" }
   else if (props.multiplier >= 11 && props.type == "fa-crown") { return "bg-gradient-to-t from-amber-900 to-yellow-600 shadow shadow-2xl shadow-amber-400 text-slate-100 hover:text-amber-800" }
   else { return " bg-slate-50" }
@@ -99,7 +105,7 @@ const superCardColor = () => {
   else if (props.type == 'fa-fire') { return "bg-gradient-to-t from-red-400 to-red-800" }
   else if (props.type == 'fa-droplet') { return "bg-gradient-to-t from-indigo-200 to-indigo-800" }
   else if (props.type == 'fa-snowflake') { return "bg-gradient-to-t from-cyan-200 to-cyan-800" }
-  else if (props.type == 'fa-biohazard') { return "bg-gradient-to-t from-green-200 to-lime-800 bg-[url('https://img.freepik.com/premium-photo/atomic-bomb-explosion-world-war-apocalypse-armageddon-nuclear-bomb-hydrogen-bomb_508524-818.jpg')] bg-cover" }
+  else if (props.type == 'fa-biohazard') { return "bg-gradient-to-t from-green-200 to-lime-800 bg-[url('../../public/kaboom.avif')] bg-cover" }
   else if (props.type == 'fa-crown') { return "bg-gradient-to-t from-amber-200 to-yellow-800" }
 }
 </script>
