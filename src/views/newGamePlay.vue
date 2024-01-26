@@ -2,9 +2,10 @@
     <div class="flex w-full h-full flex-col justify-between" :class="bg">
         <alertBox :announce="announcement" :roundWinner="winner" />
         <div class="flex flex-row justify-between">
-            <ScoreBoard :score="points" :Wins="userWinningCards" :Who="'user'"/>
+            <ScoreBoard :score="points" :Wins="userWinningCards" :Who="'user'" />
             <div class="flex flex-row justify-between">
-                <computerHand @choosen-computer-card="getComputerCards" :opponentCard="onTable[0]" :Draw="timeToDraw" :effects="effects" />
+                <computerHand @choosen-computer-card="getComputerCards" :opponentCard="onTable[0]" :Draw="timeToDraw"
+                    :effects="effects" />
             </div>
             <ScoreBoard :score="points" :Wins="pcWinningCards" :Who="'pc'" />
         </div>
@@ -41,7 +42,7 @@ import { ref, onMounted } from 'vue';
 
 const onTable = ref([]);
 const computerTable = ref([]);
-const winner = ref(""); 
+const winner = ref("");
 const userWinningCards = ref([]);
 const pcWinningCards = ref([]);
 const timeToDraw = ref(0);
@@ -60,14 +61,14 @@ const effects = ref([
     },
 ])
 const points = ref([
-  {
-    user: 'user',
-    punkte: 0
-  },
-  {
-    user: 'computer',
-    punkte: 0
-  }
+    {
+        user: 'user',
+        punkte: 0
+    },
+    {
+        user: 'computer',
+        punkte: 0
+    }
 ]);
 
 const setCards = (card) => {
@@ -81,54 +82,58 @@ const getComputerCards = (PcTable) => {
 
 
     console.log('GOT BOTH VALUES BOSS')
-    if (onTable.value != 0 && computerTable.value != 0){
+    if (onTable.value != 0 && computerTable.value != 0) {
         setTimeout(() => {
-            compareType(onTable, computerTable); 
+            compareType(onTable, computerTable);
         }, 3000);
     }
-    
+
 };
 
 const compareType = (onTable, computerTable) => {
     console.log('IM COMPARING TYPES');
     console.log('THE TYPES ARE:', onTable.value[0].type, computerTable.value[0].type);
-         if (onTable.value[0].type == "fa-face-angry" && computerTable.value[0].type != "fa-face-angry") {if ((points.value[0].punkte - 2) >= points.value[1].punkte ){endGame("win"); winner.value = 'GameWon'} else {winner.value = 'user'; treatWinner(onTable, computerTable); lessPower('pc')}}
-    else if (onTable.value[0].type != "fa-face-angry" && computerTable.value[0].type == "fa-face-angry") {if ((points.value[1].punkte - 2) >= points.value[0].punkte ){endGame("lose"); winner.value = 'GameLost'} else {winner.value = 'pc'; treatWinner(onTable, computerTable); lessPower('user')}}
-    else if (onTable.value[0].type == "fa-biohazard" && computerTable.value[0].type != "fa-biohazard") {if ((points.value[0].punkte - 2) >= points.value[1].punkte ){endGame("win"); winner.value = 'GameWon'} else {winner.value = 'user'; treatWinner(onTable, computerTable); deletePoints('pc')}}
-    else if (onTable.value[0].type != "fa-biohazard" && computerTable.value[0].type == "fa-biohazard") {if ((points.value[1].punkte - 2) >= points.value[0].punkte ){endGame("lose"); winner.value = 'GameLost'} else {winner.value = 'pc'; treatWinner(onTable, computerTable); deletePoints('user')}}
-    else if (onTable.value[0].type == "fa-biohazard" && computerTable.value[0].type == "fa-biohazard") {winner.value = 'tie'; treatWinner(onTable, computerTable);}
-    else if (onTable.value[0].type == "fa-fire" && computerTable.value[0].type == "fa-snowflake") {if ((points.value[0].punkte - 2) >= points.value[1].punkte ){endGame("win"); winner.value = 'GameWon'} else {winner.value = 'user'; treatWinner(onTable, computerTable)}}
-    else if (onTable.value[0].type == "fa-snowflake" && computerTable.value[0].type == "fa-droplet") {if ((points.value[0].punkte - 2) >= points.value[1].punkte ){endGame("win"); winner.value = 'GameWon'} else {winner.value = 'user'; treatWinner(onTable, computerTable)}}
-    else if (onTable.value[0].type == "fa-droplet" && computerTable.value[0].type == "fa-fire") {if ((points.value[0].punkte - 2) >= points.value[1].punkte ){endGame("win"); winner.value = 'GameWon'} else {winner.value = 'user'; treatWinner(onTable, computerTable)}}
-    else if (onTable.value[0].type == "fa-fire" && computerTable.value[0].type == "fa-droplet") {if ((points.value[1].punkte - 2) >= points.value[0].punkte ) {endGame("lose"); winner.value = 'GameLost'} else {winner.value = 'pc'; treatWinner(onTable, computerTable)}}
-    else if (onTable.value[0].type == "fa-droplet" && computerTable.value[0].type == "fa-snowflake") {if ((points.value[1].punkte - 2) >= points.value[0].punkte ) {endGame("lose"); winner.value = 'GameLost'} else {winner.value = 'pc'; treatWinner(onTable, computerTable)}}
-    else if (onTable.value[0].type == "fa-snowflake" && computerTable.value[0].type == "fa-fire") {if ((points.value[1].punkte - 2) >= points.value[0].punkte ) {endGame("lose"); winner.value = 'GameLost'} else {winner.value = 'pc'; treatWinner(onTable, computerTable)}}
-    else {compareMultipliers(onTable, computerTable)}
+    if (onTable.value[0].type == "fa-crown" && computerTable.value[0].type != "fa-crown") { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable); lessPower('pc') } }
+    else if (onTable.value[0].type != "fa-crown" && computerTable.value[0].type == "fa-crown") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable); lessPower('user') } }
+    else if (onTable.value[0].type == "fa-biohazard" && computerTable.value[0].type != "fa-biohazard") { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable); deletePoints('pc') } }
+    else if (onTable.value[0].type != "fa-biohazard" && computerTable.value[0].type == "fa-biohazard") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable); deletePoints('user') } }
+    else if (onTable.value[0].type == "fa-biohazard" && computerTable.value[0].type == "fa-biohazard") { winner.value = 'tie'; treatWinner(onTable, computerTable); }
+    else if (onTable.value[0].type == "fa-fire" && (computerTable.value[0].type == "fa-snowflake" || computerTable.value[0].type == "fa-wind")) { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable) } }
+    else if (onTable.value[0].type == "fa-snowflake" && (computerTable.value[0].type == "fa-droplet" || computerTable.value[0].type == "fa-wind")) { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable) } }
+    else if (onTable.value[0].type == "fa-droplet" && (computerTable.value[0].type == "fa-fire" || computerTable.value[0] == "fa-gem")) { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable) } }
+    else if (onTable.value[0].type == "fa-wind" && (computerTable.value[0].type == "fa-droplet" || computerTable.value[0] == "fa-gem")) { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable) } }
+    else if (onTable.value[0].type == "fa-gem" && (computerTable.value[0].type == "fa-fire" || computerTable.value[0] == "fa-snowflake")) { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable) } }
+    else if ((onTable.value[0].type == "fa-fire" || onTable.value[0].type == "fa-gem") && computerTable.value[0].type == "fa-droplet") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable) } }
+    else if ((onTable.value[0].type == "fa-droplet" || onTable.value[0].type == "fa-wind") && computerTable.value[0].type == "fa-snowflake") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable) } }
+    else if ((onTable.value[0].type == "fa-snowflake" || onTable.value[0].type == "fa-wind") && computerTable.value[0].type == "fa-fire") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable) } }
+    else if ((onTable.value[0].type == "fa-droplet" || onTable.value[0].type == "fa-gem") && computerTable.value[0].type == "fa-wind") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable) } }
+    else if ((onTable.value[0].type == "fa-fire" || onTable.value[0].type == "fa-snow") && computerTable.value[0].type == "fa-gem") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable) } }
+    else { compareMultipliers(onTable, computerTable) }
 };
 
 const compareMultipliers = (onTable, computerTable) => {
     console.log('IM COMPARING MULTIPLIERS');
     console.log('THE MULTIPLIERS ARE', onTable.value.multiplier, computerTable.multiplier);
-    if (onTable.value[0].multiplier > computerTable.value[0].multiplier) {winner.value = 'user'; treatWinner(onTable, computerTable)}
-    if (onTable.value[0].multiplier < computerTable.value[0].multiplier) {winner.value = 'pc'; treatWinner(onTable, computerTable)}
-    else {winner.value = 'tie'; treatWinner(onTable, computerTable)}
+    if (onTable.value[0].multiplier > computerTable.value[0].multiplier) { winner.value = 'user'; treatWinner(onTable, computerTable) }
+    if (onTable.value[0].multiplier < computerTable.value[0].multiplier) { winner.value = 'pc'; treatWinner(onTable, computerTable) }
+    else { winner.value = 'tie'; treatWinner(onTable, computerTable) }
 };
 
 const treatWinner = () => {
     console.log('CHECKING THE WINNER');
-    if (winner.value == 'user'){
+    if (winner.value == 'user') {
         userWinningCards.value.push(onTable.value[0]);
         points.value[0].punkte++;
         announcement.value = true;
         if (onTable.value[0].multiplier >= 20) { effects.value[1].deleteMegaCards++ }
-    } 
-    else if (winner.value == 'pc'){
+    }
+    else if (winner.value == 'pc') {
         pcWinningCards.value.push(computerTable.value[0]);
         points.value[1].punkte++;
         announcement.value = true;
         if (computerTable.value[0].multiplier >= 20) { effects.value[0].deleteMegaCards++ }
     }
-    else if (winner.value == 'tie'){
+    else if (winner.value == 'tie') {
         announcement.value = true;
     }
     console.log('THE WINNER IS', winner.value, ("!"));
@@ -144,30 +149,34 @@ const treatWinner = () => {
 }
 
 const endGame = (stats) => {
-  if (stats == "win") { announcement.value = true; setTimeout(() => location.reload(), 3000); }
-  if (stats == "lose") { announcement.value = true; setTimeout(() => location.reload(), 3000); }
+    if (stats == "win") { announcement.value = true; setTimeout(() => location.reload(), 3000); }
+    if (stats == "lose") { announcement.value = true; setTimeout(() => location.reload(), 3000); }
 }
 
 const deletePoints = (who) => {
     if (who == "user") {
-        if (points.value[0].punkte > 0){
-            points.value[0].punkte--}}
+        if (points.value[0].punkte > 0) {
+            points.value[0].punkte--
+        }
+    }
     else if (who == "pc") {
-        if (points.value[1].punkte > 0){
-            points.value[1].punkte--}}
+        if (points.value[1].punkte > 0) {
+            points.value[1].punkte--
+        }
+    }
 };
 const lessPower = (who) => {
     if (who == "user") {
-        effects.value[0].killpoints ++
-        }
+        effects.value[0].killpoints++
+    }
     else if (who == "pc") {
-        effects.value[1].killpoints ++
+        effects.value[1].killpoints++
     }
 
 };
 
 onMounted(async () => {
     bg.value = "bg-gradient-to-t from-slate-800 to-slate-300";
-}); 
+});
 
 </script>

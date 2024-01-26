@@ -33,6 +33,14 @@
                                 <input class="m-0.5" type="radio" name="element" id="fa-snowflake">
                                 <label for="fa-snowflake">Snow</label>
                             </div>
+                            <div>
+                                <input class="m-0.5" type="radio" name="element" id="fa-wind">
+                                <label for="fa-wind">Wind</label>
+                            </div>
+                            <div>
+                                <input class="m-0.5" type="radio" name="element" id="fa-gem">
+                                <label for="fa-gem">Stone</label>
+                            </div>
                         </fieldset>
                     </div>
                     <div class="flex w-1/2">
@@ -132,7 +140,6 @@ export default {
             const isTyped = Math.floor(Math.random() * 1000) + 1;
             if (op >= 95) { multiplier = multiplier + 10 }
             if (1952 >= isTyped >= 1945) { type = 'fa-biohazard'; multiplier = 20; }
-            if (isTyped >= 1999) { type = 'fa-face-angry'; multiplier = 20; }
             makeCard(this.cardName, type, color, this.cardDescription, multiplier)
                 .then((response) => {
                     console.log("op", op)

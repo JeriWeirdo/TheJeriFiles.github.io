@@ -27,7 +27,19 @@
             :type="card.type" :description="card.description" class="text-slate-900 hover:border hover:border-red-600" />
         </div>
         <div class="flex flex-col">
+          <CardForge v-for="card in windCards" :name="card.name" :multiplier="card.multiplier" :cor="card.color"
+            :type="card.type" :description="card.description" class="text-slate-900 hover:border hover:border-red-600" />
+        </div>
+        <div class="flex flex-col">
+          <CardForge v-for="card in gemCards" :name="card.name" :multiplier="card.multiplier" :cor="card.color"
+            :type="card.type" :description="card.description" class="text-slate-900 hover:border hover:border-red-600" />
+        </div>
+        <div class="flex flex-col">
           <CardForge v-for="card in biohazardCards" :name="card.name" :multiplier="card.multiplier" :cor="card.color"
+            :type="card.type" :description="card.description" class="text-slate-900 hover:border hover:border-red-600" />
+        </div>
+        <div class="flex flex-col">
+          <CardForge v-for="card in JeriCards" :name="card.name" :multiplier="card.multiplier" :cor="card.color"
             :type="card.type" :description="card.description" class="text-slate-900 hover:border hover:border-red-600" />
         </div>
       </div>
@@ -49,17 +61,22 @@ const fireCards = ref([]);
 const waterCards = ref([]);
 const snowCards = ref([]);
 const biohazardCards = ref([]);
+const windCards = ref([]);
+const gemCards = ref([]);
+const JeriCards = ref([]);
 
 const changeDisplay = () => {
   displayType.value = !displayType.value
 }
 
 const separateByType = () => {
+  JeriCards.value = Cards.value.filter(card => card.type == "fa-crown")
   fireCards.value = Cards.value.filter(card => card.type == "fa-fire")
   waterCards.value = Cards.value.filter(card => card.type == "fa-droplet")
   snowCards.value = Cards.value.filter(card => card.type == "fa-snowflake")
   biohazardCards.value = Cards.value.filter(card => card.type == "fa-biohazard")
-  console.log('fa-fire', fireCards);
+  windCards.value = Cards.value.filter(card => card.type == "fa-wind")
+  gemCards.value = Cards.value.filter(card => card.type == "fa-gem")
 }
 
 const togglePopup = () => {
