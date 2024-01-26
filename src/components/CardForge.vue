@@ -29,10 +29,10 @@
           multiplier }}</p>
       </div>
       <div class="flex flex-col">
+        <img v-if="name == 'Jeri'" class="rounded mb-1" src="../../public/jeri.png" />
         <p class="border border-amber-500 rounded p-0.5 align-self-end mb-0.5 capitalize" :class="[opGlint2()]">{{ name }}
         </p>
-        <p
-          class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate-300 text-xs text-balance truncate overflow-hidden">
+        <p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate-300 text-xs text-balance truncate overflow-hidden">
           {{ description }}</p>
       </div>
     </div>
@@ -74,11 +74,17 @@ const elementalcolor = () => {
 };
 const opGlint = () => {
   if (props.multiplier >= 11) {
-    return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-cyan-300 to-amber-700 hover:bg-gradient-to-t hover:from-cyan-600 hover:via-yellow-500 hover:to-amber-800"
+    if (props.type == "fa-fire") {return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-red-700 via-red-800 to-amber-700 hover:bg-gradient-to-t hover:from-red-600 hover:via-yellow-500 hover:to-amber-800"}
+    if (props.type == "fa-snowflake") {return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-sky-700 via-sky-800 to-amber-700 hover:bg-gradient-to-t hover:from-slate-600 hover:via-sky-500 hover:to-amber-800"}
+    if (props.type == "fa-droplet") {return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-blue-700 via-blue-800 to-amber-700 hover:bg-gradient-to-t hover:from-indigo-600 hover:via-blue-500 hover:to-amber-800"}
+    if (props.type == "fa-biohazard") {return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-green-700 via-lime-800 to-amber-700 hover:bg-gradient-to-t hover:from-red-600 hover:via-yellow-500 hover:to-neutral-900"}
+    if (props.type == "fa-face-angry") {return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-yellow-700 via-amber-500 to-amber-700 hover:bg-gradient-to-t hover:from-amber-600 hover:via-red-400 hover:to-amber-800"}
+    else {return "shadow shadow-inner shadow-2xl shadow-yellow-600 bg-gradient-to-t from-cyan-300 to-amber-700 hover:bg-gradient-to-t hover:from-cyan-600 hover:via-yellow-500 hover:to-amber-800"}
   } else { return " bg-slate-50" }
 }
 const opGlint2 = () => {
-  if (props.multiplier >= 11 && props.type == "fa-fire") { return "bg-gradient-to-t from-red-600 to-red-800 shadow shadow-2xl shadow-amber-400 text-slate-200 hover:text-amber-600" }
+  if (props.name == "🗽America🗽") {return "bg-gradient-to-l from-blue-800 via-white to-red-600 shadow shadow-2xl shadow-amber-400 text-blue-800 hover:text-amber-600"}
+  else if (props.multiplier >= 11 && props.type == "fa-fire") { return "bg-gradient-to-t from-red-600 to-red-800 shadow shadow-2xl shadow-amber-400 text-slate-200 hover:text-amber-600" }
   else if (props.multiplier >= 11 && props.type == "fa-droplet") { return "bg-gradient-to-t from-blue-400 to-blue-800 shadow shadow-2xl shadow-amber-400 text-slate-200 hover:text-amber-600" }
   else if (props.multiplier >= 11 && props.type == "fa-snowflake") { return "bg-gradient-to-t from-slate-300 to-sky-600 shadow shadow-2xl shadow-amber-400 text-slate-100 hover:text-amber-600" }
   else if (props.multiplier >= 11 && props.type == "fa-biohazard") { return "bg-gradient-to-t from-green-900 to-lime-600 shadow shadow-2xl shadow-amber-400 text-slate-100 hover:text-amber-800" }
@@ -86,11 +92,14 @@ const opGlint2 = () => {
   else { return " bg-slate-50" }
 
 }
+
+//BackgroundColor
 const superCardColor = () => {
-  if (props.type == 'fa-fire') { return "bg-gradient-to-t from-red-400 to-red-800" }
+  if (props.name == "🗽America🗽"){ return  "bg-[url('https://i.pinimg.com/originals/6b/89/a7/6b89a7c523502582a06adb0977babc13.jpg')] bg-cover"}
+  else if (props.type == 'fa-fire') { return "bg-gradient-to-t from-red-400 to-red-800" }
   else if (props.type == 'fa-droplet') { return "bg-gradient-to-t from-indigo-200 to-indigo-800" }
   else if (props.type == 'fa-snowflake') { return "bg-gradient-to-t from-cyan-200 to-cyan-800" }
-  else if (props.type == 'fa-biohazard') { return "bg-gradient-to-t from-green-200 to-lime-800" }
+  else if (props.type == 'fa-biohazard') { return "bg-gradient-to-t from-green-200 to-lime-800 bg-[url('https://img.freepik.com/premium-photo/atomic-bomb-explosion-world-war-apocalypse-armageddon-nuclear-bomb-hydrogen-bomb_508524-818.jpg')] bg-cover" }
   else if (props.type == 'fa-face-angry') { return "bg-gradient-to-t from-amber-200 to-yellow-800" }
 }
 </script>
