@@ -870,6 +870,230 @@
       "description": "Since November 1st, 1952, being a menace",
       "multiplier": 20,
       "id": 108
+    },
+    {
+      "name": "Jeri",
+      "type": "fa-crown",
+      "color": "bg-amber-500",
+      "description": "Meet the maker",
+      "multiplier": 20,
+      "id": 109
+    },
+    {
+      "name": "This is fun to make gang",
+      "type": "fa-snowflake",
+      "color": "bg-emerald-500",
+      "description": "This is fun to make gang",
+      "multiplier": 4,
+      "id": 110
+    },
+    {
+      "name": "Another one",
+      "type": "fa-droplet",
+      "color": "bg-blue-500",
+      "description": "Yes",
+      "multiplier": 5,
+      "id": 111
+    },
+    {
+      "name": "🗽America🗽",
+      "type": "fa-fire",
+      "color": "bg-red-500",
+      "description": "The BEST",
+      "multiplier": 19,
+      "id": 112
+    },
+    {
+      "name": "The First Breath",
+      "type": "fa-wind",
+      "color": "bg-white",
+      "description": "First wind card ever🍃",
+      "multiplier": 10,
+      "id": 113
+    },
+    {
+      "name": "Rolling Stone",
+      "type": "fa-gem",
+      "color": "bg-gray-500",
+      "description": "The first pebbles are forming",
+      "multiplier": 3,
+      "id": 114
+    },
+    {
+      "name": "Tornado",
+      "type": "fa-wind",
+      "color": "bg-gray-500",
+      "description": "Ultimate Destruction",
+      "multiplier": 20,
+      "id": 115
+    },
+    {
+      "name": "Earthquake",
+      "type": "fa-gem",
+      "color": "bg-gray-500",
+      "description": "The mightiest of events",
+      "multiplier": 20,
+      "id": 116
+    },
+    {
+      "name": "Rockin' Ruby",
+      "type": "fa-gem",
+      "color": "bg-red-500",
+      "description": "Shiny and Sparkling with a Ruby Twist",
+      "multiplier": 1,
+      "id": 117
+    },
+    {
+      "name": "Opal-tunity",
+      "type": "fa-gem",
+      "color": "bg-orange-500",
+      "description": "An Opal-tunity for Vibrations",
+      "multiplier": 2,
+      "id": 118
+    },
+    {
+      "name": "Amberlance",
+      "type": "fa-gem",
+      "color": "bg-amber-500",
+      "description": "Amberlance: Golden Quakes",
+      "multiplier": 3,
+      "id": 119
+    },
+    {
+      "name": "Yellowrumble",
+      "type": "fa-gem",
+      "color": "bg-yellow-500",
+      "description": "Yellowrumble: The Sunshine Shake",
+      "multiplier": 4,
+      "id": 120
+    },
+    {
+      "name": "Limerquake",
+      "type": "fa-gem",
+      "color": "bg-lime-500",
+      "description": "Limerquake: A Vibrant Quivering",
+      "multiplier": 5,
+      "id": 121
+    },
+    {
+      "name": "Emerquake",
+      "type": "fa-gem",
+      "color": "bg-green-500",
+      "description": "Emerquake: Nature's Trembling Elegance",
+      "multiplier": 6,
+      "id": 122
+    },
+    {
+      "name": "Tealshake",
+      "type": "fa-gem",
+      "color": "bg-emerald-500",
+      "description": "Tealshake: Shaking in Teal Tranquility",
+      "multiplier": 7,
+      "id": 123
+    },
+    {
+      "name": "Cyanquake",
+      "type": "fa-gem",
+      "color": "bg-teal-500",
+      "description": "Cyanquake: A Serene Cyan Shudder",
+      "multiplier": 8,
+      "id": 124
+    },
+    {
+      "name": "Gem-nado",
+      "type": "fa-gem",
+      "color": "bg-cyan-500",
+      "description": "Gem-nado: Jewels Whirling in Chaos",
+      "multiplier": 9,
+      "id": 125
+    },
+    {
+      "name": "Whispy Whirl",
+      "type": "fa-wind",
+      "color": "bg-sky-500",
+      "description": "Whispy Whirl: A Sky-high Breeze",
+      "multiplier": 1,
+      "id": 126
+    },
+    {
+      "name": "Blue Gusto",
+      "type": "fa-wind",
+      "color": "bg-blue-500",
+      "description": "Blue Gusto: Breezy Azure Adventure",
+      "multiplier": 2,
+      "id": 127
+    },
+    {
+      "name": "Indigo Zephyr",
+      "type": "fa-wind",
+      "color": "bg-indigo-500",
+      "description": "Indigo Zephyr: A Whirlwind of Indigo",
+      "multiplier": 3,
+      "id": 128
+    },
+    {
+      "name": "Violet Vortex",
+      "type": "fa-wind",
+      "color": "bg-violet-500",
+      "description": "Violet Vortex: A Purple Swirl",
+      "multiplier": 4,
+      "id": 129
+    },
+    {
+      "name": "Twist of Fate",
+      "type": "fa-wind",
+      "color": "bg-gray-500",
+      "description": "Whirlwind of Woe",
+      "multiplier": 5,
+      "id": 130
+    },
+    {
+      "name": "Quake 'n' Shake",
+      "type": "fa-gem",
+      "color": "bg-gray-500",
+      "description": "The Rock 'n' Roller",
+      "multiplier": 2,
+      "id": 131
+    },
+    {
+      "name": "Zephyr Zoom",
+      "type": "fa-wind",
+      "color": "bg-sky-500",
+      "description": "Zephyr Zoom: Sky's Swirling Dance",
+      "multiplier": 5,
+      "id": 132
+    },
+    {
+      "name": "Breeze Blaster",
+      "type": "fa-wind",
+      "color": "bg-blue-500",
+      "description": "Breeze Blaster: Blast of Blue Wind",
+      "multiplier": 6,
+      "id": 133
+    },
+    {
+      "name": "Aero Whirl",
+      "type": "fa-wind",
+      "color": "bg-indigo-500",
+      "description": "Aero Whirl: Indigo Whirlwind",
+      "multiplier": 7,
+      "id": 134
+    },
+    {
+      "name": "Whispering Gale",
+      "type": "fa-wind",
+      "color": "bg-violet-500",
+      "description": "Whispering Gale: Gentle Violet Breeze",
+      "multiplier": 8,
+      "id": 135
+    },
+    {
+      "name": "Cyclonic Surge",
+      "type": "fa-wind",
+      "color": "bg-rose-500",
+      "description": "Cyclonic Surge: A Rose-tinged Cyclone",
+      "multiplier": 9,
+      "id": 136
     }
   ],
   "colorsArray": [
@@ -947,6 +1171,11 @@
       "id": 15,
       "name": "bg-rose-500",
       "color": "Rose"
+    },
+    {
+      "id": 16,
+      "name": "bg-white",
+      "color": "White"
     }
   ]
 }

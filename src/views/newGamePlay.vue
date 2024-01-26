@@ -103,10 +103,10 @@ const compareType = (onTable, computerTable) => {
 
     else if (
         (playerType === "fa-fire" && (computerType === "fa-snowflake" || computerType === "fa-wind")) ||
-        (playerType === "fa-snowflake" && (computerType === "fa-droplet" || computerType === "fa-wind")) ||
-        (playerType === "fa-wind" && (computerType === "fa-droplet" || computerType === "fa-stone")) ||
-        (playerType === "fa-droplet" && (computerType === "fa-stone" || computerType === "fa-fire")) ||
-        (playerType === "fa-stone" && (computerType === "fa-fire" || computerType === "fa-snowflake"))
+        (playerType === "fa-snowflake" && (computerType === "fa-droplet" || computerType === "fa-gem")) ||
+        (playerType === "fa-wind" && (computerType === "fa-droplet" || computerType === "fa-gem")) ||
+        (playerType === "fa-droplet" && (computerType === "fa-gem" || computerType === "fa-fire")) ||
+        (playerType === "fa-gem" && (computerType === "fa-fire" || computerType === "fa-snowflake"))
     ) {
         // Player wins
         if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' }
@@ -117,9 +117,9 @@ const compareType = (onTable, computerTable) => {
     } else if (
         (computerType === "fa-fire" && (playerType === "fa-snowflake" || playerType === "fa-wind")) ||
         (computerType === "fa-snowflake" && (playerType === "fa-droplet" || playerType === "fa-wind")) ||
-        (computerType === "fa-wind" && (playerType === "fa-droplet" || playerType === "fa-stone")) ||
-        (computerType === "fa-droplet" && (playerType === "fa-stone" || playerType === "fa-fire")) ||
-        (computerType === "fa-stone" && (playerType === "fa-fire" || playerType === "fa-snowflake"))
+        (computerType === "fa-wind" && (playerType === "fa-droplet" || playerType === "fa-gem")) ||
+        (computerType === "fa-droplet" && (playerType === "fa-gem" || playerType === "fa-gem")) ||
+        (computerType === "fa-gem" && (playerType === "fa-fire" || playerType === "fa-snowflake"))
     ) {
         // Computer wins
         if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' }
