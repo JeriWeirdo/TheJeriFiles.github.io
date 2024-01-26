@@ -107,7 +107,7 @@ const superCardColor = () => {
   else if (props.type == 'fa-snowflake') { return "bg-gradient-to-t from-cyan-200 to-cyan-800" }
   else if (props.type == 'fa-wind') { return "bg-gradient-to-t from-neutral-200 to-sky-500" }
   else if (props.type == 'fa-gem') { return "bg-gradient-to-t from-slate-200 to-stone-800" }
-  else if (props.type == 'fa-biohazard') { return "bg-gradient-to-t from-green-200 to-lime-800 bg-[url('https://i.pinimg.com/originals/6b/89/a7/6b89a7c523502582a06adb0977babc13.jpg')] bg-center bg-cover" }
-  else if (props.type == 'fa-crown') { return "bg-gradient-to-t from-amber-200 to-yellow-800" }
+  else if (props.type == 'fa-crown') { return "bg-gradient-to-t from-green-200 to-lime-800 bg-[url('https://i.pinimg.com/564x/3e/f2/a5/3ef2a5486b0b478c049dbcba67e051f7.jpg')] bg-center bg-cover" }
+  else if (props.type == 'fa-biohazard') { return "bg-gradient-to-t from-amber-200 to-yellow-800" }
 }
 </script>
