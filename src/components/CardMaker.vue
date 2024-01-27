@@ -137,7 +137,7 @@ export default {
             const color = document.querySelector('input[name="color"]:checked').id;
             let multiplier = Math.floor(Math.random() * 10) + 1;
             const op = Math.floor(Math.random() * 100) + 1;
-            const isTyped = Math.floor(Math.random() * 1000) + 1;
+            const isTyped = Math.floor(Math.random() * 2000) + 1;
             if (op >= 95) { multiplier = multiplier + 10 }
             if (1952 >= isTyped >= 1945) { type = 'fa-biohazard'; multiplier = 20; }
             makeCard(this.cardName, type, color, this.cardDescription, multiplier)
