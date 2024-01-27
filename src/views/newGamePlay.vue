@@ -96,10 +96,10 @@ const compareType = (onTable, computerTable) => {
 
     const playerType = onTable.value[0].type;
     const computerType = computerTable.value[0].type;
-    if (playerType === "fa-crown" && computerType != "fa-crown") { treatWinner(onTable, computerTable); if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user';  lessPower('pc') } }
-    else if (playerType != "fa-crown" && computerType === "fa-crown") { treatWinner(onTable, computerTable); if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; lessPower('user') } }
-    else if (playerType === "fa-biohazard" && computerType != "fa-biohazard") { treatWinner(onTable, computerTable); if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; deletePoints('pc') } }
-    else if (playerType != "fa-biohazard" && computerType === "fa-biohazard") { treatWinner(onTable, computerTable); if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; deletePoints('user') } }
+    if (playerType === "fa-crown" && computerType != "fa-crown") { winner.value = 'user'; treatWinner(onTable, computerTable);  lessPower('pc'); if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' }}
+    else if (playerType != "fa-crown" && computerType === "fa-crown") { winner.value = 'pc'; treatWinner(onTable, computerTable); lessPower('user'); if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' }}
+    else if (playerType === "fa-biohazard" && computerType != "fa-biohazard") { winner.value = 'user'; treatWinner(onTable, computerTable); deletePoints('pc'); if ((points.value[0].punkte - 2) >= points.value[1].punkte){ endGame("win"); winner.value = 'GameWon' }}
+    else if (playerType != "fa-biohazard" && computerType === "fa-biohazard") { winner.value = 'pc'; treatWinner(onTable, computerTable); deletePoints('user'); if ((points.value[1].punkte - 2) >= points.value[0].punkte){ endGame("lose"); winner.value = 'GameLost' }}
 
     else if (
         (playerType === "fa-fire" && (computerType === "fa-snowflake" || computerType === "fa-wind")) ||
