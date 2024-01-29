@@ -30,7 +30,7 @@
       </div>
       <div class="flex flex-col">
         <img v-if="name == 'Jeri'" class="rounded mb-1" src="../assets/jeri.png" />
-        <img v-else-if="type == 'fa-biohazard'" class="rounded mb-5" src="../assets/kaboom.jpg" />
+        <!-- <img v-else-if="type == 'fa-biohazard'" class="rounded mb-5" src="../assets/kaboom.jpg" /> -->
         <p class="border border-amber-500 rounded p-0.5 align-self-end mb-0.5 capitalize" :class="[opGlint2()]">{{ name }}
         </p>
         <p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate-300 text-xs text-balance truncate overflow-hidden">
@@ -103,6 +103,7 @@ const opGlint2 = () => {
 //BackgroundColor
 const superCardColor = () => {
   if (props.name == "🗽America🗽"){ return  "bg-[url('https://i.pinimg.com/originals/6b/89/a7/6b89a7c523502582a06adb0977babc13.jpg')] bg-cover"}
+  else if (props.type == "fa-biohazard"){ return  "bg-[url('https://upload.wikimedia.org/wikipedia/commons/7/79/Operation_Upshot-Knothole_-_Badger_001.jpg')] bg-cover bg-center"}
   else if (props.type == 'fa-fire') { return "bg-gradient-to-t from-red-400 to-red-800" }
   else if (props.type == 'fa-droplet') { return "bg-gradient-to-t from-indigo-200 to-indigo-800" }
   else if (props.type == 'fa-snowflake') { return "bg-gradient-to-t from-cyan-200 to-cyan-800" }
