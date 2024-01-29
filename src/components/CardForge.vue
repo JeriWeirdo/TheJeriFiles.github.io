@@ -33,7 +33,7 @@
         <!-- <img v-else-if="type == 'fa-biohazard'" class="rounded mb-5" src="../assets/kaboom.jpg" /> -->
         <p class="border border-amber-500 rounded p-0.5 align-self-end mb-0.5 capitalize text-amber-500" :class="[opGlint2()]">{{ name }}
         </p>
-        <p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate-300 text-xs text-balance truncate overflow-hidden">
+        <p class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate-300 text-xs text-balance">
           {{ description }}</p>
       </div>
     </div>
@@ -50,7 +50,7 @@
         <p class="border border-amber-500 rounded p-0.5 text-slate align-self-end mb-0.5 capitalize"
           :class="[opGlint2()]">{{ name }}</p>
         <p
-          class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate text-xs text-balance truncate overflow-hidden">
+          class="border border-amber-500 bg-slate-50 rounded p-0.5 text-slate text-xs text-balance">
           {{ description }}</p>
       </div>
     </div>
