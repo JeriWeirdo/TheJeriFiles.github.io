@@ -103,6 +103,7 @@ const opGlint2 = () => {
 //BackgroundColor
 const superCardColor = () => {
   if (props.name == "🗽America🗽"){ return  "bg-[url('https://i.pinimg.com/originals/6b/89/a7/6b89a7c523502582a06adb0977babc13.jpg')] bg-cover"}
+  if (props.name == "Hydrogen"){ return  "bg-[url('https://media.tenor.com/ByHfwBHRhkIAAAAM/frog-frog-laughing.gif')] bg-cover"}
   else if (props.type == "fa-biohazard"){ return  "bg-[url('https://upload.wikimedia.org/wikipedia/commons/7/79/Operation_Upshot-Knothole_-_Badger_001.jpg')] bg-cover bg-center"}
   else if (props.type == 'fa-fire') { return "bg-gradient-to-t from-red-400 to-red-800" }
   else if (props.type == 'fa-droplet') { return "bg-gradient-to-t from-indigo-200 to-indigo-800" }
