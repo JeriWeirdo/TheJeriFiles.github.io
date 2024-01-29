@@ -127,7 +127,7 @@ const image = () => {
   else if (props.type == 'fa-gem'){}
   else if (props.type == 'fa-fire'){}
   else if (props.type == 'fa-droplet'){}
-  else if (props.type == 'fa-crown'){return '../assets/jeri.png'}
+  else if (props.type == 'fa-crown'){return '/src/assets/jeri.png'}
   else {return null}
 }
 
