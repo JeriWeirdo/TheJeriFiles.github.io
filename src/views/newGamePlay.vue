@@ -49,6 +49,11 @@ const timeToDraw = ref(0);
 const announcement = ref(false);
 const bg = ref("");
 const explosion = new Audio('/src/assets/audio/explosion.wav');
+const fire = new Audio('/src/assets/audio/fire.wav');
+const water = new Audio('/src/assets/audio/water.wav');
+const wind = new Audio('/src/assets/audio/wind.wav');
+const snow = new Audio('/src/assets/audio/snow.wav');
+const stone = new Audio('/src/assets/audio/rock.wav');
 const effects = ref([
     {
         user: 'user',
@@ -147,14 +152,33 @@ const treatWinner = () => {
     console.log('CHECKING THE WINNER');
     if (winner.value == 'user') {
         userWinningCards.value.push(onTable.value[0]);
-        if (onTable.value[0].type === "fa-biohazard") {explosion.play()};
+        if (onTable.value[0].type === "fa-biohazard") { explosion.play() }
+        else if (onTable.value[0].type === "fa-fire") { fire.play() }
+        else if (onTable.value[0].type === "fa-snowflake") { snow.play() }
+        else if (computerTable.value[0].type === "fa-droplet") {
+            water.play(); setTimeout(() => {
+                water.pause();
+            }, 1000);
+        }
+        else if (onTable.value[0].type === "fa-gem") { stone.play() }
+        else if (onTable.value[0].type === "fa-wind") { wind.play() };
         points.value[0].punkte++;
         announcement.value = true;
         if (onTable.value[0].multiplier >= 20) { effects.value[1].deleteMegaCards++ }
     }
     else if (winner.value == 'pc') {
         pcWinningCards.value.push(computerTable.value[0]);
-        if (computerTable.value[0].type === "fa-biohazard") {explosion.play()};
+        if (computerTable.value[0].type === "fa-biohazard") { explosion.play() }
+        else if (computerTable.value[0].type === "fa-fire") { fire.play() }
+        else if (computerTable.value[0].type === "fa-snowflake") { snow.play() }
+        else if (computerTable.value[0].type === "fa-droplet") {
+            water.play(); setTimeout(() => {
+                water.pause();
+            }, 1000);
+        }
+        else if (computerTable.value[0].type === "fa-gem") { stone.play() }
+        else if (computerTable.value[0].type === "fa-wind") { wind.play() };
+        if (computerTable.value[0].type === "fa-biohazard") { explosion.play() };
         points.value[1].punkte++;
         announcement.value = true;
         if (computerTable.value[0].multiplier >= 20) { effects.value[0].deleteMegaCards++ }
@@ -184,13 +208,13 @@ const deletePoints = (who) => {
         if (points.value[0].punkte > 0) {
             points.value[0].punkte--
         }
-        else {points.value[0].punkte = 0}
+        else { points.value[0].punkte = 0 }
     }
     else if (who == "pc") {
         if (points.value[1].punkte > 0) {
             points.value[1].punkte--
         }
-        else {points.value[1].punkte = 0}
+        else { points.value[1].punkte = 0 }
     }
 };
 const lessPower = (who) => {
