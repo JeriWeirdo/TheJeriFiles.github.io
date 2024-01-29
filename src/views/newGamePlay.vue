@@ -96,10 +96,10 @@ const compareType = (onTable, computerTable) => {
 
     const playerType = onTable.value[0].type;
     const computerType = computerTable.value[0].type;
-    if (playerType === "fa-crown" && computerType != "fa-crown") { winner.value = 'user'; treatWinner(onTable, computerTable);  lessPower('pc'); if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' }}
-    else if (playerType != "fa-crown" && computerType === "fa-crown") { winner.value = 'pc'; treatWinner(onTable, computerTable); lessPower('user'); if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' }}
-    else if (playerType === "fa-biohazard" && computerType != "fa-biohazard") { winner.value = 'user'; treatWinner(onTable, computerTable); deletePoints('pc'); if ((points.value[0].punkte - 2) >= points.value[1].punkte){ endGame("win"); winner.value = 'GameWon' }}
-    else if (playerType != "fa-biohazard" && computerType === "fa-biohazard") { winner.value = 'pc'; treatWinner(onTable, computerTable); deletePoints('user'); if ((points.value[1].punkte - 2) >= points.value[0].punkte){ endGame("lose"); winner.value = 'GameLost' }}
+    if (playerType === "fa-crown" && computerType != "fa-crown") { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable); lessPower('pc') } }
+    else if (playerType != "fa-crown" && computerType === "fa-crown") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable); lessPower('user') } }
+    else if (playerType === "fa-biohazard" && computerType != "fa-biohazard") { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable); deletePoints('pc') } }
+    else if (playerType != "fa-biohazard" && computerType === "fa-biohazard") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable); deletePoints('user') } }
 
     else if (
         (playerType === "fa-fire" && (computerType === "fa-snowflake" || computerType === "fa-wind")) ||
@@ -133,27 +133,6 @@ const compareType = (onTable, computerTable) => {
         compareMultipliers(onTable, computerTable);
     }
 };
-
-// const compareType = (onTable, computerTable) => {
-//     console.log('IM COMPARING TYPES');
-//     console.log('THE TYPES ARE:', onTable.value[0].type, computerTable.value[0].type);
-//     if (onTable.value[0].type == "fa-crown" && computerTable.value[0].type != "fa-crown") { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable); lessPower('pc') } }
-//     else if (onTable.value[0].type != "fa-crown" && computerTable.value[0].type == "fa-crown") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable); lessPower('user') } }
-//     else if (onTable.value[0].type == "fa-biohazard" && computerTable.value[0].type != "fa-biohazard") { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable); deletePoints('pc') } }
-//     else if (onTable.value[0].type != "fa-biohazard" && computerTable.value[0].type == "fa-biohazard") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable); deletePoints('user') } }
-//     else if (onTable.value[0].type == "fa-biohazard" && computerTable.value[0].type == "fa-biohazard") { winner.value = 'tie'; treatWinner(onTable, computerTable); }
-//     else if (onTable.value[0].type == "fa-fire" && (computerTable.value[0].type == "fa-snowflake" || computerTable.value[0].type == "fa-wind")) { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable) } }
-//     else if (onTable.value[0].type == "fa-snowflake" && (computerTable.value[0].type == "fa-droplet" || computerTable.value[0].type == "fa-wind")) { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable) } }
-//     else if (onTable.value[0].type == "fa-droplet" && (computerTable.value[0].type == "fa-fire" || computerTable.value[0] == "fa-gem")) { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable) } }
-//     else if (onTable.value[0].type == "fa-wind" && (computerTable.value[0].type == "fa-droplet" || computerTable.value[0] == "fa-gem")) { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable) } }
-//     else if (onTable.value[0].type == "fa-gem" && (computerTable.value[0].type == "fa-fire" || computerTable.value[0] == "fa-snowflake")) { if ((points.value[0].punkte - 2) >= points.value[1].punkte) { endGame("win"); winner.value = 'GameWon' } else { winner.value = 'user'; treatWinner(onTable, computerTable) } }
-//     else if ((onTable.value[0].type == "fa-fire" || onTable.value[0].type == "fa-gem") && computerTable.value[0].type == "fa-droplet") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable) } }
-//     else if ((onTable.value[0].type == "fa-droplet" || onTable.value[0].type == "fa-wind") && computerTable.value[0].type == "fa-snowflake") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable) } }
-//     else if ((onTable.value[0].type == "fa-snowflake" || onTable.value[0].type == "fa-wind") && computerTable.value[0].type == "fa-fire") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable) } }
-//     else if ((onTable.value[0].type == "fa-droplet" || onTable.value[0].type == "fa-gem") && computerTable.value[0].type == "fa-wind") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable) } }
-//     else if ((onTable.value[0].type == "fa-fire" || onTable.value[0].type == "fa-snow") && computerTable.value[0].type == "fa-gem") { if ((points.value[1].punkte - 2) >= points.value[0].punkte) { endGame("lose"); winner.value = 'GameLost' } else { winner.value = 'pc'; treatWinner(onTable, computerTable) } }
-//     else { compareMultipliers(onTable, computerTable) }
-// };
 
 const compareMultipliers = (onTable, computerTable) => {
     console.log('IM COMPARING MULTIPLIERS');
