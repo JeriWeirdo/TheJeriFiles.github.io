@@ -73,6 +73,8 @@ const toTable = (card) => {
     if (index !== -1) {
         cardsOnDeck.value.splice(index, 1);
         IsACardOnTable.value = true
+        const audio = new Audio('/src/assets/audio/frog-laughing-meme.mp3')
+        if (card.name === "Hydrogen") { audio.play() }
         emit('choosenCard', card);
         setTimeout(() => {
             IsACardOnTable.value = false

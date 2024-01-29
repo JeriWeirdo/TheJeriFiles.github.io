@@ -47,7 +47,8 @@ const userWinningCards = ref([]);
 const pcWinningCards = ref([]);
 const timeToDraw = ref(0);
 const announcement = ref(false);
-const bg = ref("")
+const bg = ref("");
+const explosion = new Audio('/src/assets/audio/explosion.wav');
 const effects = ref([
     {
         user: 'user',
@@ -103,7 +104,7 @@ const compareType = (onTable, computerTable) => {
 
     else if (
         (playerType === "fa-fire" && (computerType === "fa-snowflake" || computerType === "fa-wind")) ||
-        (playerType === "fa-snowflake" && (computerType === "fa-droplet" || computerType === "fa-gem")) ||
+        (playerType === "fa-snowflake" && (computerType === "fa-droplet" || computerType === "fa-wind")) ||
         (playerType === "fa-wind" && (computerType === "fa-droplet" || computerType === "fa-gem")) ||
         (playerType === "fa-droplet" && (computerType === "fa-gem" || computerType === "fa-fire")) ||
         (playerType === "fa-gem" && (computerType === "fa-fire" || computerType === "fa-snowflake"))
@@ -146,12 +147,14 @@ const treatWinner = () => {
     console.log('CHECKING THE WINNER');
     if (winner.value == 'user') {
         userWinningCards.value.push(onTable.value[0]);
+        if (onTable.value[0].type === "fa-biohazard") {explosion.play()};
         points.value[0].punkte++;
         announcement.value = true;
         if (onTable.value[0].multiplier >= 20) { effects.value[1].deleteMegaCards++ }
     }
     else if (winner.value == 'pc') {
         pcWinningCards.value.push(computerTable.value[0]);
+        if (computerTable.value[0].type === "fa-biohazard") {explosion.play()};
         points.value[1].punkte++;
         announcement.value = true;
         if (computerTable.value[0].multiplier >= 20) { effects.value[0].deleteMegaCards++ }
@@ -181,11 +184,13 @@ const deletePoints = (who) => {
         if (points.value[0].punkte > 0) {
             points.value[0].punkte--
         }
+        else {points.value[0].punkte = 0}
     }
     else if (who == "pc") {
         if (points.value[1].punkte > 0) {
             points.value[1].punkte--
         }
+        else {points.value[1].punkte = 0}
     }
 };
 const lessPower = (who) => {
